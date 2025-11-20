@@ -1,0 +1,24 @@
+{
+    "cSpell.ignoreWords": [
+        "doesn"
+    ],
+    "files.watcherExclude": {
+        "**/.git": true,
+        "**/.next": true,
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/.turbo": true,
+        "**/.cache": true,
+        "**/build": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/.next": true,
+        "**/dist": true,
+        "**/.turbo": true
+    },
+    // ← Add this new line
+    "typescript.tsserver.maxTsServerMemory": 8192,
+    // (Optional but very common together with this)
+    "typescript.tsdk": "./node_modules/typescript/lib"
+}

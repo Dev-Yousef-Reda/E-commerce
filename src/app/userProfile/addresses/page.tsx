@@ -1,0 +1,105 @@
+'use client'
+import { useState } from 'react'
+import { Button } from '_/components/ui/button'
+import AddNewUserAddress from './AddAddress/AddAddress'
+import { addressType } from '_/app/checkout/checkout.types'
+
+export default function AddAddress() {
+
+    const [addresses, setAddresses] = useState<null | string>(() => localStorage.getItem('addresses'))
+    const [selectedAddressID, setSelectedAddressID] = useState('')
+    const [defaultAddress, setDefaultAddress] = useState<string | null>(() => localStorage.getItem('defaultAddress'))
+
+    let addressesArr: addressType[] = []
+    if (addresses !== null) {
+        addressesArr = JSON.parse(addresses)
+    }
+
+    let addressWithID: addressType = { city: '', details: '', phone: '' }
+
+    if (defaultAddress) {
+        addressWithID = JSON.parse(defaultAddress)
+    }
+
+    function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+        setSelectedAddressID(event.target.value)
+    }
+
+    function handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
+        event.preventDefault()
+
+        const selectedAddress: addressType = addressesArr.find((address: addressType) => address.id === selectedAddressID)!
+
+        localStorage.setItem('defaultAddress', JSON.stringify(selectedAddress))
+
+        setDefaultAddress(JSON.stringify(selectedAddress))
+    }
+
+    return (
+        <>
+
+            <h1 className='font-bold text-slate-600 text-xl mb-5' >
+                Addresses
+            </h1>
+
+            <main className='  bg-white rounded-xl p-3 mb-5 '>
+                <section className=" mb-5 " >
+                    <header className='px-5 border-b-1 border-b-slate-300  flex justify-between '>
+                        <span className="font-semibold text-slate-500 text-lg" >Deliver to this address</span>
+                    </header>
+
+                    {defaultAddress && (
+                        <div className="flex items-center bg-slate-100 text-slate-600  px-2 mt-2 rounded-lg">
+                            <i className="fa-solid fa-location-dot fa-bounce fa-xl block"></i>
+                            <div className="inline-block ms-2 my-3 " >
+                                <p> {addressWithID?.city} </p>
+                                <p> {addressWithID?.details} </p>
+                                <p> {addressWithID?.phone} </p>
+                            </div>
+                        </div>
+                    )}
+
+                </section>
+
+                {addresses && (
+                    <>
+                        <h2 className=' text-slate-500 font-semibold text-lg border-b-1 border-b-slate-300 pb-1 ps-3 ' >
+                            Shipping Addresses
+                        </h2>
+                        <form className='mb-3 px-1' onSubmit={handleSubmit}>
+                            {addressesArr.map((address, index) =>
+                                <div key={index} className='flex items-center bg-slate-100 my-3 px-3 py-2 rounded-lg  border-2 border-slate-300 has-checked:border-blue-400' >
+                                    <label htmlFor={`${address.id}`} className='ms-3 w-full cursor-pointer flex items-center '>
+                                        <input
+                                            type="radio"
+                                            name="address"
+                                            id={`${address.id}`}
+                                            className='peer'
+                                            onChange={handleChange}
+                                            value={address.id}
+                                            checked={address.id === selectedAddressID}
+                                        />
+                                        <span className='ms-3'>
+                                            <span className='block' > {address?.city} </span>
+                                            <span className='block' > {address?.details} </span>
+                                            <span className='block' > {address?.phone} </span>
+                                        </span>
+                                    </label>
+                                </div>
+                            )}
+                            <Button
+                                className='bg-blue-400 text-white font-bold hover:bg-blue-500 cursor-pointer  transition-all duration-300 '
+                                type="submit"
+                            >
+                                Select Address
+                            </Button>
+                        </form>
+                    </>
+                )}
+
+                <AddNewUserAddress setAddresses={setAddresses} setDefaultAddress={setDefaultAddress} />
+
+            </main>
+        </>
+    )
+}
