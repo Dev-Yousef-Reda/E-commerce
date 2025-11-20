@@ -68,7 +68,7 @@ export default function Login() {
                                 </FieldLabel>
                                 <Input
                                     {...field}
-                                    id="form-rhf-input-username"
+                                    id="email"
                                     aria-invalid={fieldState.invalid}
                                     placeholder="Email"
                                     autoComplete="email"

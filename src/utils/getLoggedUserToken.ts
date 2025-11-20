@@ -9,6 +9,8 @@ export async function getLoggedUserToken() {
 
     if (cookiesToken) {
         const jwt = await decode({ token: cookiesToken, secret: process.env.NEXTAUTH_SECRET! })
+        console.log('token :', jwt?.userToken);
+        
         return jwt?.userToken;
     }
     return null
