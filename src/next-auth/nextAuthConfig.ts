@@ -12,7 +12,7 @@ export const nextAuthConfig: NextAuthOptions = {
             },
             authorize: async function (credentials) {
                 try {
-                    const response = await fetch('https://ecommerce.routemisr.com/api/v1/auth/signin', {
+                    const response = await fetch(`${process.env.API}/auth/signin`, {
                         method: 'POST',
                         body: JSON.stringify(credentials),
                         headers: {
