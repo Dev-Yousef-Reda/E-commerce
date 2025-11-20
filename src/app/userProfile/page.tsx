@@ -1,6 +1,6 @@
 'use client'
 import { useSession } from 'next-auth/react'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect,  useState } from 'react'
 import { Input } from '_/components/ui/input'
 import { Controller, useForm } from 'react-hook-form'
 import * as zod from "zod"
