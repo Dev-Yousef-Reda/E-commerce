@@ -72,7 +72,7 @@ export default function Login() {
                                     aria-invalid={fieldState.invalid}
                                     placeholder="Email"
                                     autoComplete="email"
-                                    className='border-slate-400 rounded-full'
+                                    className='border-border rounded-full'
                                     type='email'
                                 />
 
@@ -99,7 +99,7 @@ export default function Login() {
                                     aria-invalid={fieldState.invalid}
                                     placeholder="Password"
                                     autoComplete="new-password"
-                                    className='border-slate-400 rounded-full'
+                                    className='border-border rounded-full'
                                     type='password'
                                 />
 
