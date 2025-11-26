@@ -71,7 +71,7 @@ export default function UserProfile() {
     return (
         <>
             <h1 className=' text-foreground text-2xl font-bold ' > Profile </h1>
-            <p className=' font-semibold text-lg text-muted-foreground ' >View & Update Your Personal and Contact Information</p>
+            <p className=' font-semibold  sm:text-lg ps-5 mt-1.5 text-muted-foreground ' >View & Update Your Personal and Contact Information</p>
             <main
                 className=' mt-[20px] '
             >
