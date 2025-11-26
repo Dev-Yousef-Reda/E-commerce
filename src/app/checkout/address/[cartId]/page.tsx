@@ -33,7 +33,7 @@ export default function AddAddress() {
 
     return (
 
-        <main className=' w-1/2 mx-auto  mt-[100px] md:mt-[210px] border-border shadow-xl rounded-xl p-3 '>
+        <main className=' w-1/2 mx-auto  mt-[210px] border-border shadow-xl rounded-xl p-3 '>
 
             {addresses && (
                 <form className='mb-3 px-1' onSubmit={handleSubmit}>

@@ -9,7 +9,7 @@ export default function SearchProducts({ products, searchName }: { products: pro
     return (
         <>
             <div
-                className='  mt-[100px] md:mt-[210px] mb-[40px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-5 gap-6'
+                className='mt-[210px] mb-[40px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-5 gap-6'
             >
                 {matchingProducts.map((product) =>
                     <div

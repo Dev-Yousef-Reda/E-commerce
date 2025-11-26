@@ -34,7 +34,7 @@ export default async function page({ searchParams }: PageProps) {
 
     return (
 
-        <main className='mt-[100px] md:mt-[210px] w-[90%] mx-auto overflow-auto my-10' >
+        <main className='mt-[210px] w-[90%] mx-auto overflow-auto my-10' >
             <h1
                 className='flex justify-between items-center mb-4 mt-0 pt-0 pb-5 border-b-2 border-b-border font-bold text-foreground'
             >

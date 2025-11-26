@@ -17,7 +17,7 @@ export default async function page() {
     return (
 
         <main
-            className=' w-[90%] xl:w-[70%]  mx-auto mt-[100px] md:mt-[210px]   rounded-xl mb-10 '
+            className=' w-[90%] xl:w-[70%]  mx-auto mt-[210px]   rounded-xl mb-10 '
         >
             <h1 className=' text-foreground font-semibold text-3xl mb-3 '  >Wishlist</h1>
 

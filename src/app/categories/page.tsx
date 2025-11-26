@@ -10,7 +10,7 @@ export default async function page() {
   const allCategories = await getAllCategories()
 
   return (
-    <main className=' mt-[100px] md:mt-[180px]' >
+    <main className=' mt-[180px]' >
 
       {allCategories?.map((category) =>
         <ImageCoverCategorySection category={category} key={category._id} defaultImage={category.image} alt={category.name} />

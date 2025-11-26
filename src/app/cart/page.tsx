@@ -19,7 +19,7 @@ export default async function page() {
         <>
             {cartDetails?.numOfCartItems > 0 && (
                 <main
-                    className=' flex flex-wrap mt-[100px] md:mt-[210px] mb-11 w-[90%] mx-auto justify-center '
+                    className=' flex flex-wrap mt-[210px] mb-11 w-[90%] mx-auto justify-center '
                 >
                     <>
                         <div className='w-[100%] lg:w-[70%] p-3 shadow-xl border-border rounded-xl ' >

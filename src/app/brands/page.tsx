@@ -22,7 +22,7 @@ export default async function page() {
     
     return (
 
-        <main className=' mt-[100px] md:mt-[180px] ' >
+        <main className='mt-[180px] ' >
 
             {allBrands.map((brand) =>
                 <ImageCoverBrandSection brand={brand} key={brand._id} defaultImage={brand.image} alt={brand.name} />

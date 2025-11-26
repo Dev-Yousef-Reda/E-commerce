@@ -26,7 +26,7 @@ export default async function page({ searchParams }: { searchParams: Promise<{ c
 
     if (categoryProducts?.data.length === 0) {
         return (
-            <div className='mx-auto  w-[90%]  mt-[100px] md:mt-[210px] f ' >
+            <div className='mx-auto  w-[90%] mt-[210px] ' >
                 <div className='   mx-auto max-h-[70vh] mt-[20px] ' >
                     <Image
                         src={categoryDetails?.image ?? ''}
@@ -44,7 +44,7 @@ export default async function page({ searchParams }: { searchParams: Promise<{ c
     }
 
     return (
-        <main className=' mt-[100px] md:mt-[180px]  w-[90%] mx-auto overflow-auto my-10' >
+        <main className=' mt-[210px]  w-[90%] mx-auto overflow-auto my-10' >
             <h1
                 className='flex justify-between items-center my-4 pb-5 border-b-2 border-b-border font-bold text-foreground'
             >

@@ -18,7 +18,7 @@ export function HeroSection({
     <section
       className={cn(
         "text-foreground ",
-        " mt-[100px] md:mt-[210px]",
+        " mt-[210px]",
         "fade-bottom overflow-hidden pb-0"
       )}
     >
@@ -34,17 +34,13 @@ export function HeroSection({
             Service You Can Trust
           </h1>
 
-          {/* Description */}
-          <p className="text-md relative z-10 w-1/2 animate-appear font-medium text-muted-foreground opacity-0 delay-100 sm:text-xl">
-            {description}
-          </p>
 
           <ul
             className='flex  flex-wrap animate-appear pb-4 '
           >
 
-            <li className=' px-4 mt-7 w-full md:w-[50%] lg:w-1/3' >
-              <div className='rounded-3xl border shadow-lg bg-white shadow-primary/10 md:min-h-[250px]  py-7 px-5 text-card-foreground ' >
+            <li className=' px-4 mt-7 w-full md:w-[50%] lg:w-1/3 ' >
+              <div className='rounded-3xl border shadow-lg bg-white shadow-primary/10 md:min-h-[300px]  py-7 px-5 text-card-foreground ' >
                 <p className='mb-3 lg:text-xl font-bold capitalize  ' >
                   Assured Quality and transactions
                 </p>
@@ -55,7 +51,7 @@ export function HeroSection({
             </li>
 
             <li className='  px-4 mt-7 w-full md:w-[50%] lg:w-1/3' >
-              <div className='rounded-3xl border shadow-lg bg-white shadow-primary/10 md:min-h-[250px] py-7 px-5  text-card-foreground' >
+              <div className='rounded-3xl border shadow-lg bg-white shadow-primary/10 md:min-h-[300px] py-7 px-5  text-card-foreground' >
                 <p className='mb-3 lg:text-xl font-bold capitalize ' >
                   Fast & Reliable Delivery
                 </p>
@@ -68,7 +64,7 @@ export function HeroSection({
             </li>
 
             <li className='  px-4 mt-7 w-full md:w-[50%] lg:w-1/3' >
-              <div className='rounded-3xl border shadow-lg bg-white shadow-primary/10 md:min-h-[250px] py-7 px-5  text-card-foreground' >
+              <div className='rounded-3xl border shadow-lg bg-white shadow-primary/10 md:min-h-[300px] py-7 px-5  text-card-foreground' >
                 <p className='mb-3 lg:text-xl font-bold capitalize' >
                   Trusted by Thousands of Customers
                 </p>

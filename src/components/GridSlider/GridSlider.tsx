@@ -10,6 +10,7 @@ import leftArrow from './../../assets/Arrow-left.png'
 import rightArrow from './../../assets/arrow-right.png'
 import { brandType } from "_/types/brands.types";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 export default function GridSlider({ sliderName, slides, }
     : { sliderName: string, slides: brandType[], imageArea: string, height: number }) {
@@ -38,9 +39,11 @@ export default function GridSlider({ sliderName, slides, }
         }
     }, []);
 
+    const userSession = useSession()
+
     return (
 
-        <section className=" w-[90%] mx-auto my-15 relative  mt-[100px] md:mt-[210px] " >
+        <section className={` w-[90%] mx-auto my-15 relative ${userSession.status === 'authenticated' && ' mt-[210px] '}  `} >
 
             <h2
                 className='flex justify-between items-center mb-4 pb-5 border-b-2 border-b-secondary text-2xl lg:text-4xl'

@@ -59,7 +59,7 @@ export default async function page({ searchParams }: PageProps) {
     }
 
     return (
-        <main className=' mb-15 mt-[100px] md:mt-[210px]  w-[90%] mx-auto' >
+        <main className=' mb-15 mt-[210px]  w-[90%] mx-auto' >
             <section className=' productDetails grid grid-cols-12 grid-rows-7 gap-4 ' >
 
                 <div className=' col-span-12 xl:col-span-6 row-span-5 xl:row-span-7 w-full mx-auto xl:w-full rounded-2xl '>

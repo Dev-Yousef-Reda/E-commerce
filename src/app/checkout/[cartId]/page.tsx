@@ -84,7 +84,7 @@ export default function Page() {
     }
 
     return (
-        <main className=" mt-[100px] md:mt-[210px] flex justify-between w-[70%]  mb-7 mx-auto">
+        <main className=" mt-[210px] flex justify-between w-[70%]  mb-7 mx-auto">
 
             <section className="w-[70%] border-border shadow-xl p-3 rounded-xl ">
                 <section className="  " >
