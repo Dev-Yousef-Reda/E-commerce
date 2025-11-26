@@ -103,7 +103,7 @@ export default function Navbar({ showMegaMenu = true }: { showMegaMenu?: boolean
             >
                 <div className={`${isTransparent ? 'bg-transparent ' : 'bg-secondary/85  backdrop-blur-sm'} backdrop-blur-md   text-secondary-foreground  py-4`}
                 >
-                    <div className={` ${showMegaMenu ? '  justify-between ' : ' xl:w-[80%] '} w-[90%] max-w-[90%] mx-auto flex  items-center sm:gap-4`} >
+                    <div className={` w-[90%] max-w-[90%] mx-auto flex  items-center sm:gap-4    ${showMegaMenu ? '  justify-between flex-wrap ' : ' xl:w-[80%] '}`} >
 
                         <div className='logo flex items-center gap-1 me-1.5 sm:me-0 sm:gap-4 w-[10%] min-w-max ' >
                             {showMegaMenu &&
@@ -115,7 +115,7 @@ export default function Navbar({ showMegaMenu = true }: { showMegaMenu?: boolean
 
                             <div className="logo  w-max font-bold text-xl md:text-3xl ">
                                 <Link href={`/`} className='w-max block ' >
-                                    <div className=' w-[200px] ' >
+                                    <div className=' w-[150px] md:w-[200px] ' >
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 200" role="img" className='  '  >
                                             <g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
                                                 <path d="M60 150 L115 40 L170 150" stroke='#A54040' />
@@ -138,8 +138,7 @@ export default function Navbar({ showMegaMenu = true }: { showMegaMenu?: boolean
 
                         </div>
 
-                        <div className={`search  
-                                    ${showMegaMenu ? ' grow sm:grow-0 w-[30%] sm:w-[50%] max-w-[50%] relative ' : ' grow flex justify-center '}`}>
+                        <div className={`search  ${showMegaMenu ? ' order-3 sm:order-0 mt-2 sm:mt-0 w-[70%] mx-auto sm:mx-0 sm:w-[50%] sm:max-w-[50%] relative ' : '  w-[80%]  flex justify-center '} `}>
                             <div className={` ${showMegaMenu ? '' : ' relative w-[70%] md:w-2/3 lg:w-1/2 '} `} >
                                 <Input
                                     type="text"
@@ -163,8 +162,10 @@ export default function Navbar({ showMegaMenu = true }: { showMegaMenu?: boolean
                         {showMegaMenu &&
                             <div className="authentication icon flex justify-between items-center gap-[1%] sm:w-[10%]  font-bold">
                                 {userSession.status === 'unauthenticated' && (
-                                    <div className={` w-max md:text-base text-secondary-foreground`} >
-                                        <Link className=' text-sm ms-1 md:text-lg w-max block bg-primary/80 text-primary-foreground px-3.5 py-2 rounded-full' href="/signin"> Sign In </Link>
+                                    <div className={` w-full md:text-base text-secondary-foreground`} >
+                                        <Link className=' w-max  text-sm text-center  md:text-lg block bg-primary/80 text-primary-foreground px-3.5 py-2 rounded-full' href="/signin">
+                                            Sign In
+                                        </Link>
                                     </div>
                                 )}
                                 {userSession.status === 'authenticated' && (
@@ -224,13 +225,11 @@ export default function Navbar({ showMegaMenu = true }: { showMegaMenu?: boolean
                             </div>
                         }
 
-
-
                     </div>
                 </div>
 
                 {showMegaMenu &&
-                    <div className={`${isTransparent ? 'bg-transparent ' : 'bg-secondary/40  backdrop-blur-sm'} border-border hidden md:block -z-[1] w-full py-4 relative `} >
+                    <div className={`${isTransparent ? 'bg-transparent ' : 'bg-secondary/40  backdrop-blur-sm'}   border-border hidden md:block -z-[1] w-full py-4 relative `} >
                         <div className=' w-[90%] mx-auto  ' >
                             <NavigationMenuDemo products={[...products1!, ...products2!]} categories={categories} />
                         </div>
