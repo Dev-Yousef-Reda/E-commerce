@@ -25,7 +25,7 @@ export default async function page() {
 
   return (
     <>
-      
+
       {userSession == null && (
         <HeroSectionDemo />
       )}
@@ -41,6 +41,7 @@ export default async function page() {
           <JoinUs />
         </>
       )}
+
     </>
   )
 }
