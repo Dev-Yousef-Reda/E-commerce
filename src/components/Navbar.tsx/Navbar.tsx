@@ -101,7 +101,7 @@ export default function Navbar({ showMegaMenu = true }: { showMegaMenu?: boolean
             <nav
                 className={` fixed w-full top-0 z-50  border-b-1 border-b-white-100/50 text-base `}
             >
-                <div className={`${isTransparent ? 'bg-transparent ' : 'bg-blue-300/80  backdrop-blur-sm'} text-slate-700 py-4`}
+                <div className={`${isTransparent ? 'bg-transparent ' : 'bg-secondary/85  backdrop-blur-sm'} backdrop-blur-md   text-secondary-foreground  py-4`}
                 >
                     <div className={` ${showMegaMenu ? '  justify-between ' : ' xl:w-[80%] '} w-[90%] max-w-[90%] mx-auto flex  items-center sm:gap-4`} >
 
@@ -127,17 +127,17 @@ export default function Navbar({ showMegaMenu = true }: { showMegaMenu?: boolean
                                 <Input
                                     type="text"
                                     placeholder="What are you looking for? "
-                                    className={`px-5 py-7 rounded-full  placeholder:text-slate-400 text-xs md:font-semibold `}
+                                    className={`px-5 py-7 rounded-full  placeholder:text-secondary-foreground text-xs md:font-semibold `}
                                     ref={search}
                                 />
                                 <Button
                                     type="submit"
                                     variant="outline"
-                                    className='absolute top-1/2 right-[8px] -translate-y-1/2 rounded-full size-12 cursor-pointer '
+                                    className='absolute top-1/2 right-[8px] -translate-y-1/2 rounded-full size-12 cursor-pointer bg-secondary '
                                     onClick={clearSearchInput}
                                 >
                                     <i
-                                        className="fa-solid fa-magnifying-glass text-slate-600 font-bold text-lg  "
+                                        className="fa-solid fa-magnifying-glass text-secondary-foreground font-bold text-lg  "
                                     ></i>
                                 </Button>
                             </div>
@@ -146,8 +146,8 @@ export default function Navbar({ showMegaMenu = true }: { showMegaMenu?: boolean
                         {showMegaMenu &&
                             <div className="authentication icon flex justify-between items-center gap-[1%] sm:w-[10%]  font-bold">
                                 {userSession.status === 'unauthenticated' && (
-                                    <div className={` w-max md:text-base ${isTransparent ? '' : ''}  text-slate-700`} >
-                                        <Link className=' text-sm ms-1 md:text-lg w-max block ' href="/signin"> Sign In </Link>
+                                    <div className={` w-max md:text-base text-secondary-foreground`} >
+                                        <Link className=' text-sm ms-1 md:text-lg w-max block bg-primary/80 text-primary-foreground px-3.5 py-2 rounded-full' href="/signin"> Sign In </Link>
                                     </div>
                                 )}
                                 {userSession.status === 'authenticated' && (
@@ -163,23 +163,23 @@ export default function Navbar({ showMegaMenu = true }: { showMegaMenu?: boolean
                                             </div>
                                             {showUserMenu && (
                                                 <div
-                                                    className='bg-white/90  backdrop-blur-xl text-slate-700 w-[250px] absolute top-[65px] left-1/2 -translate-x-1/2 px-3 py-2  rounded-xl z-[100] '
+                                                    className='bg-secondary  backdrop-blur-xl text-secondary-foreground w-[250px] absolute top-[65px] left-1/2 -translate-x-1/2 px-3 py-2  rounded-xl z-[100] '
                                                 >
-                                                    <div className='text-center pb-2 border-b-1 border-b-slate-500 ' >
+                                                    <div className='text-center pb-2 border-b-1 border-b-border ' >
                                                         <p>{userSession.data.user?.name}</p>
                                                         <p>{userSession.data.user?.email}</p>
                                                     </div>
-                                                    <div className='py-2 my-2 hover:bg-neutral-200 px-3 rounded-sm ' >
-                                                        <Link className='w-full  cursor-pointer block' href={'/userProfile'} > Profile </Link>
+                                                    <div className='py-2 my-2 hover:bg-accent hover:text-accent-foreground px-3 rounded-sm ' >
+                                                        <Link className='w-full  cursor-pointer block' href={'/user-profile'} > Profile </Link>
                                                     </div>
-                                                    <div className='py-2 my-2 hover:bg-neutral-200 px-3 rounded-sm ' >
+                                                    <div className='py-2 my-2 hover:bg-accent hover:text-accent-foreground px-3 rounded-sm ' >
                                                         <Link className='w-full  cursor-pointer block' href={'/allorders'} > Orders </Link>
                                                     </div>
-                                                    <div className='py-2 my-2 hover:bg-neutral-200 px-3 rounded-sm ' >
+                                                    <div className='py-2 my-2 hover:bg-accent hover:text-accent-foreground px-3 rounded-sm ' >
                                                         <Link className='w-full  cursor-pointer block' href={'/wishlist'} > Wishlist </Link>
                                                     </div>
                                                     <button
-                                                        className=' cursor-pointer my-2 hover:bg-neutral-200 py-2 w-full text-left px-3 rounded-sm block'
+                                                        className=' cursor-pointer my-2 hover:bg-accent hover:text-accent-foreground py-2 w-full text-left px-3 rounded-sm block'
                                                         onClick={() => signOut({ redirect: true, callbackUrl: '/signin' })}
                                                     >
                                                         Sign out
@@ -191,11 +191,11 @@ export default function Navbar({ showMegaMenu = true }: { showMegaMenu?: boolean
                                         <div className=' w-[49%]  cart ' >
                                             <Link
                                                 href="/cart"
-                                                className={`text-sm w-max md:text-base  text-slate-700 relative `}
+                                                className={`text-sm w-max md:text-base  text-secondary-foreground relative `}
                                             >
                                                 <i className="fa-solid fa-cart-shopping fa-xl "></i>
                                                 {cartItemsCount > 0 && (
-                                                    <p className='absolute bg-white -top-[70%]  -right-[15px] size-6 flex items-center justify-center  rounded-full' >
+                                                    <p className='absolute bg-accent text-accent-foreground -top-[70%]  -right-[15px] size-6 flex items-center justify-center  rounded-full' >
                                                         {cartItemsCount}
                                                     </p>
                                                 )}
@@ -213,7 +213,7 @@ export default function Navbar({ showMegaMenu = true }: { showMegaMenu?: boolean
                 </div>
 
                 {showMegaMenu &&
-                    <div className={`${isTransparent ? 'bg-transparent' : 'bg-neutral-100/90 backdrop-blur-sm'} hidden md:block -z-[1] w-full py-4 relative `} >
+                    <div className={`${isTransparent ? 'bg-transparent ' : 'bg-secondary/40  backdrop-blur-sm'} border-border hidden md:block -z-[1] w-full py-4 relative `} >
                         <div className=' w-[90%] mx-auto  ' >
                             <NavigationMenuDemo products={[...products1!, ...products2!]} categories={categories} />
                         </div>

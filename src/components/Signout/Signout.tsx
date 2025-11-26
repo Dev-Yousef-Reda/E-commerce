@@ -11,7 +11,7 @@ export default function Signout() {
 
     return (
         <Button
-            className="text-slate-600 text-lg font-semibold px-3! py-3!  flex  cursor-pointer justify-start bg-transparent
+            className="text-foreground text-lg font-semibold px-3! py-3!  flex  cursor-pointer justify-start bg-transparent
                             hover:bg-red-100/70 transition-colors duration-300 w-full  rounded-xl h-fit "
             onClick={handleSignout}
         >

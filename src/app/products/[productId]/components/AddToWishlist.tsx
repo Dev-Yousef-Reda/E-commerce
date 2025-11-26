@@ -41,7 +41,7 @@ export default function AddToWishlist({ product }: { product: productType }) {
         <>
             {isLoading ?
                 <Button
-                    className='bg-blue-500 font-bold text-white rounded-full  w-13 h-13'
+                    className='bg-primary/80 font-bold text-primary-foreground rounded-full  w-13 h-13'
                     variant="outline"
                     disabled
                 >
@@ -50,7 +50,7 @@ export default function AddToWishlist({ product }: { product: productType }) {
                 :
                 <Button
                     type='submit'
-                    className=' bg-blue-500 font-bold hover:bg-blue-500 text-white cursor-pointer  rounded-full w-13 h-13 '
+                    className=' bg-primary/80 font-bold hover:bg-primary text-primary-foreground cursor-pointer  rounded-full w-13 h-13 '
                     onClick={handleAddingProductWishlist}
                 >
                     <i className=" fa-solid fa-heart  text-3xl"></i>

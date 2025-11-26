@@ -11,9 +11,9 @@ export default function ProductCard({ product }: { product: productType | undefi
 
     return (
         <>
-            <div className='w-full bg-white rounded-xl overflow-hidden cursor-pointer group relative ' >
+            <div className='w-full bg-white border border-border shadow-lg shadow-primary/10  rounded-xl overflow-hidden cursor-pointer group relative ' >
 
-                <Link href={`/products/${product.id}`} >
+                <Link href={`/products/${product.slug}?id=${product.id}`} >
                     <div className=' px-4 pt-3  ' >
                         <h3 className='text-lg font-bold  text-slate-800 line-clamp-1 ' > {(product.title)} </h3>
                         <h3 className='  text-blue-400 ' >

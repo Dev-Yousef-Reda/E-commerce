@@ -22,10 +22,10 @@ export default function SubCategories({ categoryId, products, insideNavSheet = f
     return (
         <>
             {!insideNavSheet &&
-                <div className='absolute  left-0  md:top-[121%] xl:top-[150%]  w-full bg-neutral-300/80 backdrop-blur-sm rounded-lg ' >
+                <div className='absolute  left-0  md:top-[121%] xl:top-[150%]  w-full bg-secondary/40 backdrop-blur-lg rounded-lg text-foreground ' >
                     <NavigationMenuContent  >
                         <section
-                            className={`  grid grid-cols-4 gap-1.5 px-2 py-4 `}
+                            className={`  grid grid-cols-4 gap-1.5 px-2 py-4  `}
                         >
                             {products?.length === 0 &&
                                 <p> Loading...  <i className="fa-solid fa-spinner fa-spin"></i> </p>
@@ -41,7 +41,7 @@ export default function SubCategories({ categoryId, products, insideNavSheet = f
                         </section>
                         {isLoading && <div>Loading...</div>}
                         {subCategories.length == 0 &&
-                            <p className='text-center text-slate-600 pb-4 font-semibold ' >
+                            <p className='text-center text-secondary-foreground pb-4 font-semibold ' >
                                 No Available Subcategories for this category
                             </p >
                         }
@@ -59,7 +59,7 @@ export default function SubCategories({ categoryId, products, insideNavSheet = f
                         )}
                     </section>
                     {subCategories.length == 0 &&
-                        <p className='text-center text-slate-600 pb-4 font-semibold ' >
+                        <p className='text-center text-secondary-foreground pb-4 font-semibold ' >
                             No Available Subcategories for this category
                         </p >
                     }

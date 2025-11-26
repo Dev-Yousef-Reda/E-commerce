@@ -71,7 +71,7 @@ export default function  Register() {
                                     aria-invalid={fieldState.invalid}
                                     placeholder="Name"
                                     autoComplete="name"
-                                    className='border-slate-400 rounded-full '
+                                    className='border-border rounded-full '
                                 />
 
                                 {fieldState.invalid && (
@@ -97,7 +97,7 @@ export default function  Register() {
                                     aria-invalid={fieldState.invalid}
                                     placeholder="Email"
                                     autoComplete="email"
-                                    className='border-slate-400 rounded-full'
+                                    className='border-border  rounded-full'
                                     type='email'
                                 />
 
@@ -124,7 +124,7 @@ export default function  Register() {
                                     aria-invalid={fieldState.invalid}
                                     placeholder="Password"
                                     autoComplete="new-password"
-                                    className='border-slate-400 rounded-full'
+                                    className='border-border  rounded-full'
                                     type='password'
                                 />
 
@@ -151,7 +151,7 @@ export default function  Register() {
                                     aria-invalid={fieldState.invalid}
                                     placeholder="Password Conformation"
                                     autoComplete="new-password"
-                                    className='border-slate-400 rounded-full'
+                                    className='border-border  rounded-full'
                                     type='password'
                                 />
 
@@ -178,7 +178,7 @@ export default function  Register() {
                                     aria-invalid={fieldState.invalid}
                                     placeholder="Phone"
                                     autoComplete="on"
-                                    className='border-slate-400 rounded-full'
+                                    className='border-border  rounded-full'
                                 />
 
                                 {fieldState.invalid && (
@@ -191,7 +191,7 @@ export default function  Register() {
                 
                 {isLoading ?
                     <Button
-                        className=' rounded-full text-lg bg-blue-400 hover:bg-blue-500 transition-colors duration-300 cursor-pointer text-white font-bold w-full mt-5 py-5 '
+                        className=' rounded-full text-lg bg-primary/90 hover:bg-primary transition-colors duration-300 cursor-pointer text-primary-foreground font-bold w-full mt-5 py-5 '
                         variant="outline"
                         disabled
                     >
@@ -201,7 +201,7 @@ export default function  Register() {
                     :
                     <Button
                         type='submit'
-                        className=' rounded-full text-lg bg-blue-400 hover:bg-blue-500 transition-colors duration-300 cursor-pointer text-white font-bold w-full mt-5 py-5 '
+                        className=' rounded-full text-lg bg-primary/90 hover:bg-primary transition-colors duration-300 cursor-pointer text-primary-foreground font-bold w-full mt-5 py-5 '
                     >
                         Register
                     </Button>

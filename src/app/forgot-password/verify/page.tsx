@@ -21,7 +21,7 @@ export default function ForgotPassword() {
 
             if (payload.status === 'Success') {
                 toast.success('code is entered successfully ', {
-                    description:'Enter new password'
+                    description: 'Enter new password'
                 })
                 route.push('/forgot-password/reset-password')
             } else {
@@ -34,13 +34,13 @@ export default function ForgotPassword() {
     return (
         <>
 
-            <main className='bg-neutral-100 mt-[100px] p-5 ' >
-                <section className=' w-full lg:w-[600px]  mx-auto bg-white p-5 rounded-2xl ' >
-                    <p className='text-slate-500 font-semibold text-xl border-b-1 border-b-neutral-200 pb-5 ' >
+            <main className=' mt-[100px] p-5 ' >
+                <section className=' w-full lg:w-[600px]  mx-auto border-border shadow-xl  p-5 rounded-2xl ' >
+                    <p className='text-foreground font-semibold text-xl border-b-1 border-b-neutral-200 pb-5 ' >
                         Verify code
                     </p>
 
-                    <p className='text-slate-400 my-5' >
+                    <p className='text-foreground my-5' >
                         Please enter the code send code to your email
                     </p>
 
@@ -49,18 +49,18 @@ export default function ForgotPassword() {
                             ref={codeInput}
                             placeholder='code'
                             type='text'
-
+                            className='rounded-full'
                         />
                     </div>
 
                     {isLoading ?
-                        <Button size="sm" variant="outline" disabled>
+                        <Button size="sm" variant="outline" disabled className='w-full max-w-full rounded-full '  >
                             <Spinner />
                             Sending Code...
                         </Button>
                         :
                         <Button
-                            className=' bg-blue-400 hover:bg-blue-500 transition-colors duration-300 cursor-pointer '
+                            className=' bg-primary/90 hover:bg-primary font-bold px-6 w-full max-w-full transition-colors duration-300 cursor-pointer rounded-full '
                             onClick={handleSendingResetCode}
                         >
                             Send Code

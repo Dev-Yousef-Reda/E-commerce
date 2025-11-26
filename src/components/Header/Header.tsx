@@ -5,7 +5,7 @@ import { HeroSection } from "_/components/hero-section"
 
 export function HeroSectionDemo() {
     return (
-        <div className=" bg-neutral-200  " >
+        <div className=" bg-background  " >
 
             <HeroSection
                 title="Quality You Can Feel."

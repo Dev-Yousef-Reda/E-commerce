@@ -27,7 +27,7 @@ export default function RemoveFromWishlist({ productId }: { productId: string })
     return (
         <>
             <Button
-                className=' md:w-37 bg-red-500 hover:bg-red-600 cursor-pointer transition-colors duration-300 rounded-full '
+                className=' md:w-37 bg-secondary/90 hover:bg-secondary cursor-pointer text-secondary-foreground transition-colors duration-300 rounded-full '
                 disabled={isLoading}
                 onClick={handleRemovingWishlistProduct}
             >

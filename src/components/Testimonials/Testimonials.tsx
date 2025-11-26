@@ -68,7 +68,7 @@ const thirdColumn = testimonials.slice(6, 9);
 
 export function Testimonials() {
     return (
-        <section className="bg-neutral-200 my-20 relative">
+        <section className="bg-background my-20 relative">
 
             <div className="container z-10 mx-auto">
                 <motion.div

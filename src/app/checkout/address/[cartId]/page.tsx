@@ -33,18 +33,18 @@ export default function AddAddress() {
 
     return (
 
-        <main className=' w-1/2 mx-auto  mt-[100px] md:mt-[210px] bg-white rounded-xl p-3 '>
+        <main className=' w-1/2 mx-auto  mt-[100px] md:mt-[210px] border-border shadow-xl rounded-xl p-3 '>
 
             {addresses && (
                 <form className='mb-3 px-1' onSubmit={handleSubmit}>
                     {addressesArr.map((address, index) =>
-                        <div key={index} className='flex items-center bg-slate-100 my-3 px-3 py-2 rounded-lg  border-2 border-slate-300 has-checked:border-blue-400' >
+                        <div key={index} className='flex items-center shadow-lg my-3 px-3 py-2 rounded-lg  border-2 border-border has-checked:border-primary' >
                             <label htmlFor={`${address.id}`} className='ms-3 w-full cursor-pointer flex items-center '>
                                 <input
                                     type="radio"
                                     name="address"
                                     id={`${address.id}`}
-                                    className='peer'
+                                    className='peer has-checked:bg-primary '
                                     onChange={handleChange}
                                     value={address.id}
                                     checked={address.id === selectedAddressID}
@@ -58,7 +58,7 @@ export default function AddAddress() {
                         </div>
                     )}
                     <Button
-                        className='bg-blue-400 text-white font-bold hover:bg-blue-500 cursor-pointer  transition-all duration-300 ' 
+                        className='bg-primary text-white font-bold hover:bg-primary rounded-full cursor-pointer  transition-all duration-300 ' 
                         type="submit"
                     >
                         Select Address

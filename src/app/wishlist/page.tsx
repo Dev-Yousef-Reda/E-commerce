@@ -17,11 +17,11 @@ export default async function page() {
     return (
 
         <main
-            className=' w-[90%] xl:w-[70%]  mx-auto mt-[100px] md:mt-[210px] bg-white px-5 py-3 rounded-xl mb-10 '
+            className=' w-[90%] xl:w-[70%]  mx-auto mt-[100px] md:mt-[210px]   rounded-xl mb-10 '
         >
-            <h1 className=' text-center text-slate-600 font-semibold text-3xl '  >Wishlist</h1>
+            <h1 className=' text-foreground font-semibold text-3xl mb-3 '  >Wishlist</h1>
 
-            <section  >
+            <section className='border-border shadow-xl px-5 py-3 rounded-xl ' >
                 {wishlistProducts.data.map((product) =>
                     <div
                         className=' flex justify-between items-center my-3 flex-col md:flex-row w-full  not-last:border-b-1 border-b-slate-200 pb-3 '
@@ -57,7 +57,7 @@ export default async function page() {
 
                 {wishlistProducts.data.length == 0 && 
                     <p
-                        className='text-slate-600 font-semibold text-cent text-lg'
+                        className='text-muted-foreground font-semibold text-cent text-lg text-center '
                     >
                         No Products are in wishlist
                     </p>

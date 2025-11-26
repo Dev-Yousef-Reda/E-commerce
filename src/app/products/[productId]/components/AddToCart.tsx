@@ -42,7 +42,7 @@ export default function AddToCart({ product }
         <>
             {isLoading ?
                 <Button
-                    className=' me-3 px-8 md:px-15 py-7! bg-blue-500 font-bold text-white cursor-pointer  rounded-full text-base md:text-xl md:tracking-wider  '
+                    className=' me-3 px-8 md:px-15 py-7! bg-primary/80 font-bold text-primary-foreground cursor-pointer  rounded-full text-base md:text-xl md:tracking-wider  '
                     variant="outline"
                     disabled
                 >
@@ -52,7 +52,7 @@ export default function AddToCart({ product }
                 :
                 <Button
                     type='submit'
-                    className=' me-3 px-8 md:px-15 py-7! bg-blue-500 font-bold hover:bg-blue-500 text-white cursor-pointer  rounded-full text-base md:text-xl md:tracking-wider  '
+                    className=' me-3 px-8 md:px-15 py-7! bg-primary/90 hover:bg-primary transition-opacity duration-300 font-bold  text-primary-foreground cursor-pointer  rounded-full text-base md:text-xl md:tracking-wider  '
                     onClick={handleAddingProductToCart}
                 >
                     Add to Cart | {product.priceAfterDiscount ? product.priceAfterDiscount : product.price} EGP

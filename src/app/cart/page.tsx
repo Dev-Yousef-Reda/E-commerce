@@ -22,7 +22,7 @@ export default async function page() {
                     className=' flex flex-wrap mt-[100px] md:mt-[210px] mb-11 w-[90%] mx-auto justify-center '
                 >
                     <>
-                        <div className='w-[100%] lg:w-[70%] p-3 bg-white rounded-xl ' >
+                        <div className='w-[100%] lg:w-[70%] p-3 shadow-xl border-border rounded-xl ' >
                             < CartProducts cartDetails={cartDetails} />
                             {cartDetails.numOfCartItems > 0 && (
                                 <div className=' flex justify-center w-full mt-2  ' >
@@ -41,7 +41,7 @@ export default async function page() {
             )}
 
             {cartDetails?.numOfCartItems === 0 && (
-                <p className='mt-[180px] text-center p-5 bg-white w-[90%] mx-auto rounded-xl text-slate-600 font-semibold'>No products In the cart</p>
+                <p className='mt-[180px] text-center p-5 shadow-xl border-border w-[90%] mx-auto rounded-xl text-foreground font-semibold'>No products In the cart</p>
             )}
         </>
     )

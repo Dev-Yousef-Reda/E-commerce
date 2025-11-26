@@ -43,9 +43,9 @@ export default function GridSlider({ sliderName, slides, }
         <section className=" w-[90%] mx-auto my-15 relative  mt-[100px] md:mt-[210px] " >
 
             <h2
-                className='flex justify-between items-center mb-4 pb-5 border-b-2 border-b-slate-100 text-2xl lg:text-4xl'
+                className='flex justify-between items-center mb-4 pb-5 border-b-2 border-b-secondary text-2xl lg:text-4xl'
             >
-                <span className=' text-slate-600 font-bold ' >
+                <span className=' text-foreground font-bold ' >
                     {sliderName}
                 </span>
             </h2>
@@ -93,14 +93,14 @@ export default function GridSlider({ sliderName, slides, }
                         <SwiperSlide key={slide.name} className="  mt-[50px]! ">
                             <div className='text-center '  >
                                 <div className="image-container relative">
-                                    <Link href={`/brands/${slide._id}`} >
+                                    <Link href={`/brands/${slide.slug}?id=${slide._id}`} >
                                         <Image
                                             priority={true}
                                             width={500}
                                             height={500}
                                             src={`${slide.image}`}
                                             alt=""
-                                            className={` w-full cursor-pointer h-[220px] object-cover object-center rounded-xl overflow-hidden `}
+                                            className={` w-full cursor-pointer h-[220px] object-cover object-center rounded-xl overflow-hidden  border shadow-sm shadow-primary/10  `}
                                         />
                                     </Link>
                                 </div>

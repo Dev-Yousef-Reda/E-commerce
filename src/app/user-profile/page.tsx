@@ -70,16 +70,16 @@ export default function UserProfile() {
 
     return (
         <>
-            <h1 className=' text-slate-600 text-2xl font-bold ' > Profile </h1>
-            <p className=' font-semibold text-lg text-slate-500 ' >View & Update Your Personal and Contact Information</p>
+            <h1 className=' text-foreground text-2xl font-bold ' > Profile </h1>
+            <p className=' font-semibold text-lg text-muted-foreground ' >View & Update Your Personal and Contact Information</p>
             <main
                 className=' mt-[20px] '
             >
 
                 <form onSubmit={handleSubmit(customHandleSubmit)}>
 
-                    <section className='p-5 bg-white rounded-2xl mb-5' >
-                        <h2 className=' text-slate-600 text-xl font-bold ' >
+                    <section className='p-5 border-border shadow-xl rounded-2xl mb-5' >
+                        <h2 className=' text-foreground text-xl font-bold ' >
                             Contact Information
                         </h2>
 
@@ -92,7 +92,7 @@ export default function UserProfile() {
                                         control={control}
                                         render={({ field, fieldState }) => (
                                             <Field data-invalid={fieldState.invalid}>
-                                                <FieldLabel htmlFor="form-rhf-input-username">
+                                                <FieldLabel htmlFor="form-rhf-input-username " className='text-muted-foreground' >
                                                     Email :
                                                 </FieldLabel>
                                                 <Input
@@ -101,7 +101,7 @@ export default function UserProfile() {
                                                     aria-invalid={fieldState.invalid}
                                                     placeholder="Email"
                                                     autoComplete="email"
-                                                    className='border-slate-400 rounded-full w-full '
+                                                    className='border-border rounded-full w-full placeholder:text-muted '
                                                     type='email'
                                                 />
 
@@ -122,7 +122,7 @@ export default function UserProfile() {
                                         control={control}
                                         render={({ field, fieldState }) => (
                                             <Field data-invalid={fieldState.invalid}>
-                                                <FieldLabel htmlFor="form-rhf-input-username">
+                                                <FieldLabel htmlFor="form-rhf-input-username" className='text-muted-foreground'>
                                                     Phone :
                                                 </FieldLabel>
                                                 <Input
@@ -131,7 +131,7 @@ export default function UserProfile() {
                                                     aria-invalid={fieldState.invalid}
                                                     placeholder="Phone"
                                                     autoComplete="tel"
-                                                    className='border-slate-400 rounded-full'
+                                                    className='border-border rounded-full'
                                                     type='tel'
                                                 />
 
@@ -146,8 +146,8 @@ export default function UserProfile() {
                         </div>
                     </section>
 
-                    <section className='p-5 bg-white rounded-2xl mb-5' >
-                        <h2 className=' text-slate-600 text-xl font-bold ' >
+                    <section className='p-5  border-border shadow-xl rounded-2xl mb-5' >
+                        <h2 className=' text-foreground text-xl font-bold ' >
                             Personal Information
                         </h2>
 
@@ -160,7 +160,7 @@ export default function UserProfile() {
                                         control={control}
                                         render={({ field, fieldState }) => (
                                             <Field data-invalid={fieldState.invalid}>
-                                                <FieldLabel htmlFor="form-rhf-input-username">
+                                                <FieldLabel htmlFor="form-rhf-input-username" className='text-muted-foreground'>
                                                     Name :
                                                 </FieldLabel>
                                                 <Input
@@ -169,7 +169,7 @@ export default function UserProfile() {
                                                     aria-invalid={fieldState.invalid}
                                                     placeholder="Name"
                                                     autoComplete="name"
-                                                    className='border-slate-400 rounded-full'
+                                                    className='border-border rounded-full'
                                                     type='text'
                                                 />
 
@@ -186,7 +186,7 @@ export default function UserProfile() {
                     </section>
                     {isLoading ?
                         <Button
-                            className='h-fit bg-blue-400 text-white font-bold text-lg px-8 py-3 rounded-full '
+                            className='h-fit bg-primary text-primary-foreground font-bold text-lg px-8 py-3 rounded-full '
                             variant="outline"
                             disabled>
                             <Spinner />
@@ -194,7 +194,7 @@ export default function UserProfile() {
                         </Button>
                         :
                         <Button
-                            className='h-fit bg-blue-400 text-white font-bold text-lg px-8 py-3 rounded-full hover:bg-blue-500 transition-all duration-300 cursor-pointer '
+                            className='h-fit bg-primary/90 text-primary-foreground font-bold text-lg px-8 py-3 rounded-full hover:bg-primary transition-all duration-300 cursor-pointer '
                             type='submit'
                         >
                             Update Profile

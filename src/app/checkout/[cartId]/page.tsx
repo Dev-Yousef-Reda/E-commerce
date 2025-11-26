@@ -86,18 +86,18 @@ export default function Page() {
     return (
         <main className=" mt-[100px] md:mt-[210px] flex justify-between w-[70%]  mb-7 mx-auto">
 
-            <section className="w-[70%] bg-white p-3 rounded-xl ">
+            <section className="w-[70%] border-border shadow-xl p-3 rounded-xl ">
                 <section className="  " >
-                    <header className='px-5 border-b-2 border-b-slate-300  flex justify-between '>
-                        <span className="font-bold text-slate-500" >Shipping Address</span>
+                    <header className='px-5 pb-2 border-b-2 border-b-border  flex justify-between '>
+                        <span className="font-bold text-foreground" >Shipping Address</span>
                         <Link href={`/checkout/address/${cartId}`}
-                            className=" text-blue-400 hover:underline cursor-pointer "
+                            className=" text-primary hover:underline cursor-pointer "
                         >change
                         </Link>
                     </header>
 
                     {defaultAddress && (
-                        <div className="flex items-center bg-slate-100 text-slate-600  px-2 mt-2 rounded-lg">
+                        <div className="flex items-center border shadow-lg text-foreground  px-2 mt-4 rounded-lg">
                             <i className="fa-solid fa-location-dot fa-bounce fa-xl block"></i>
                             <div className="inline-block ms-2 my-3 " >
                                 <p> {addressWithID?.city} </p>
@@ -108,15 +108,15 @@ export default function Page() {
                     )}
 
                     {!defaultAddress && (<Link href={`/checkout/address/${cartId}`}
-                        className="block text-sm text-blue-400 hover:underline cursor-pointer mt-3.5">
+                        className="block text-sm text-primary hover:underline cursor-pointer mt-3.5">
                         Add an address
                     </Link>)}
 
                 </section>
 
                 <section className=" mt-13 ">
-                    <header className='px-5 border-b-2 border-b-slate-300  flex justify-between '>
-                        <span className="font-bold text-slate-500" >Your Order</span>
+                    <header className='px-5 pb-2 border-b-2 border-b-border flex justify-between '>
+                        <span className="font-bold text-foreground" >Your Order</span>
                     </header>
 
                     {loadingProducts ? 'Loading your order' : (
@@ -129,12 +129,12 @@ export default function Page() {
                 </section>
 
                 <section className=" mt-13 ">
-                    <header className='px-5 border-b-2 border-b-slate-300  flex justify-between '>
-                        <span className="font-bold text-slate-500" >Payment</span>
+                    <header className='px-5 pb-2 border-b-2 border-b-border flex justify-between '>
+                        <span className="font-bold text-foreground" >Payment</span>
                     </header>
 
-                    <form className=" border-2 px-2 py-4 border-slate-200 mt-2.5 rounded-lg text-slate-600" >
-                        <div className="px-2 py-3 border-2 border-slate-100 has-checked:border-blue-400 rounded-lg flex ">
+                    <form className=" border-2 px-2 py-4 border-border mt-2.5 rounded-lg text-foreground" >
+                        <div className="px-2 py-3 border-2 border-border has-checked:border-primary rounded-lg flex ">
                             <input
                                 onChange={handleChange}
                                 type="radio"
@@ -149,7 +149,7 @@ export default function Page() {
                             </label>
                         </div>
 
-                        <div className="px-2 py-3 border-2 border-slate-100 has-checked:border-blue-400 rounded-lg flex mt-3 ">
+                        <div className="px-2 py-3 border-2 border-border has-checked:border-primary rounded-lg flex mt-3 ">
                             <input
                                 onChange={handleChange}
                                 type="radio"
@@ -168,16 +168,16 @@ export default function Page() {
                 </section>
             </section>
 
-            <section className=' w-[28%] bg-white h-fit py-2 rounded-lg  sticky top-[100px]'>
+            <section className=' w-[28%] shadow-xl border-border h-fit py-2 rounded-lg  sticky top-[100px]'>
                 <div className=' p-2 text-center'>
-                    <h2 className=' font-bold text-slate-500 border-b-1 border-slate-300 mb-3 '>Order Summary</h2>
+                    <h2 className=' font-bold text-foreground border-b-1 border-border mb-3 '>Order Summary</h2>
                     <p>
-                        <span className='font-bold' > Total Price:  </span>
+                        <span className='font-bold ' > Total Price:  </span>
                         {cartDetailsState?.data.totalCartPrice}
                     </p>
                     <button
                         onClick={handlePayment}
-                        className='bg-blue-400 w-full text-white font-bold px-2 py-3 rounded-lg cursor-pointer mt-3 block'
+                        className='bg-primary  w-full text-primary-foreground font-bold px-2 py-3 rounded-full cursor-pointer mt-3 block'
                         disabled={isLoading}
                     >
                         {isLoading ? 'Loading...' : 'Place Your Order'}

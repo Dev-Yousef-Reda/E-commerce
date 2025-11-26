@@ -19,15 +19,15 @@ export default function SubCategoryProducts({ subCategory, products, insideNavSh
                             <li key={`${product.id}+${index}`}>
                                 <NavSmallItem
                                     item={{ title: (product.title).split(' ', 2).join(' '), href: `/products/${product.id}` }}
-                                    href={`/products/${product.id}`}
-                                    className="min-w-max "
+                                    href={`/products/${product.slug}?id=${product.id}`}
+                                    className="min-w-max font-semibold text-secondary-foreground hover:bg-accent hover:text-accent-foreground "
                                 />
                             </li>
                         ))
                     }
 
                     {productsMatching.length == 0 &&
-                        <p className='text-slate-600 text-xs font-semibold' >
+                        <p className='text-secondary-foreground  text-xs font-semibold text-foreground' >
                             No products are Available in this subcategory
                         </p>
                     }
@@ -38,15 +38,15 @@ export default function SubCategoryProducts({ subCategory, products, insideNavSh
                     {productsMatching
                         .map((product, index) => (
                             <li key={`${product.id}+${index}`}
-                                className='line-clamp-1 my-1 py-1 px-2 bg-neutral-100 rounded-xs cursor-pointer '
+                                className='line-clamp-1 my-1 py-1 px-2 --secondary backdrop-blur-md rounded-xs cursor-pointer '
                             >
-                                <Link className='w-full block ' href={`/products/${product.id}`} > {product.title} </Link>
+                                <Link className='w-full block ' href={`/products/${product.slug}?id=${product.id}`} > {product.title} </Link>
                             </li>
                         ))
                     }
 
                     {productsMatching.length == 0 &&
-                        <p className='text-slate-600 text-xs font-semibold' >
+                        <p className='text-slate-600 text-xs --secondary --secondary-foreground backdrop-blur-md font-semibold' >
                             No products are Available in this subcategory
                         </p>
                     }

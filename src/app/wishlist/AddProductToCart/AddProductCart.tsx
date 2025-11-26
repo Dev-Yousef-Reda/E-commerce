@@ -44,7 +44,7 @@ export default function AddProductToCart({ product }
         <>
             {isLoading ?
                 <Button
-                    className=' me-3 bg-blue-500 font-bold text-white cursor-pointer  rounded-full   '
+                    className=' me-3 bg-primary/80 font-bold text-primary-foreground cursor-pointer  rounded-full   '
                     variant="outline"
                     disabled
                 >
@@ -54,7 +54,7 @@ export default function AddProductToCart({ product }
                 :
                 <Button
                     type='submit'
-                    className=' me-3 bg-blue-500 font-bold hover:bg-blue-500 text-white cursor-pointer  rounded-full md:w-37   '
+                    className=' me-3 bg-primary/90 font-bold hover:bg-primary text-primary-foreground cursor-pointer  rounded-full md:w-37   '
                     onClick={handleAddingProductToCart}
                 >
                     Add to Cart

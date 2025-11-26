@@ -9,7 +9,7 @@ export default function UpdateCartProductCount({ ProductCount, productId }: { Pr
     return (
         <>
             <h3 className='my-2  flex items-center '>
-                <span className='text-slate-500 text-lg me-2 ' >
+                <span className='text-foreground text-lg me-2 ' >
                     Amount:
                 </span>
                 <Decrease
@@ -17,7 +17,7 @@ export default function UpdateCartProductCount({ ProductCount, productId }: { Pr
                     productCount={ProductCount}
                 />
 
-                <span className='px-1 text-lg text-slate-500 font-bold '>
+                <span className='px-1 text-lg text-foreground font-bold '>
                     {ProductCount}
                 </span>
 

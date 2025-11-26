@@ -38,13 +38,13 @@ export default function ForgotPassword() {
     return (
         <>
 
-            <main className='bg-neutral-100 mt-[100px] p-5 ' >
-                <section className=' w-full lg:w-[600px]  mx-auto bg-white p-5 rounded-2xl ' >
-                    <p className='text-slate-500 font-semibold text-xl border-b-1 border-b-neutral-200 pb-5 ' >
+            <main className=' mt-[100px] p-5 ' >
+                <section className=' w-full lg:w-[600px]  mx-auto shadow-xl border-border  p-5 rounded-2xl ' >
+                    <p className='text-foreground font-semibold text-xl border-b-1 border-b-neutral-200 pb-5 ' >
                         Reset Password
                     </p>
 
-                    <p className='text-slate-400 my-5' >
+                    <p className='text-foreground my-5' >
                         Please enter your email address  to send code to your email
                     </p>
 
@@ -57,6 +57,7 @@ export default function ForgotPassword() {
                             type='email'
                             autoComplete='email'
                             id='email'
+                            className='rounded-full'
                         />
                     </div>
 
@@ -68,17 +69,18 @@ export default function ForgotPassword() {
                             id="password"
                             placeholder="Password"
                             autoComplete='password'
+                            className='rounded-full'
                         />
                     </div>
 
                     {isLoading ?
-                        <Button size="sm" variant="outline" disabled>
+                        <Button size="sm" variant="outline" disabled  className='rounded-full w-full ' >
                             <Spinner />
                             Sending Code
                         </Button>
                         :
                         <Button
-                            className=' bg-blue-400 hover:bg-blue-500 transition-colors duration-300 cursor-pointer '
+                            className=' bg-primary/90 hover:bg-primary font-bold px-6 w-full transition-colors duration-300 cursor-pointer rounded-full'
                             onClick={handleSendingResetCode}
                         >
                             Send Code

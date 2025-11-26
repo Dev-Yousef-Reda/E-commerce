@@ -8,23 +8,31 @@ import CustomSlider from '_/components/CustomSlider/CustomSlider';
 import AddToCart from './components/AddToCart';
 import AddToWishlist from './components/AddToWishlist';
 
-export async function generateMetadata({ params }: { params: Promise<{ productId: string }> }) {
-    const result = await params
+type SearchParams = Promise<{
+    id: string;
+}>;
 
-    const productId = result.productId
+type PageProps = {
+    searchParams: SearchParams;
+};
+
+export async function generateMetadata({ searchParams }: PageProps ) {
+    const result = (await searchParams).id
+
+    const productId = result
 
     const productDetails = await getProductDetailsById(productId)
 
     return {
-        title: `${productDetails?.slug}`,
+        title: `${productDetails?.title}`,
     }
 }
 
-export default async function page(props: { params: Promise<{ productId: string }> }) {
+export default async function page({ searchParams }: PageProps) {
 
-    const result = await props.params
+    const result = (await searchParams).id
 
-    const productId = result.productId
+    const productId = result
 
     const productDetails = await getProductDetailsById(productId)
 
@@ -37,10 +45,10 @@ export default async function page(props: { params: Promise<{ productId: string 
     function handleShowingRating(rating: number = 0) {
         const stars = []
         for (let i = 0; i < Math.floor(rating); i++) {
-            stars.push(<i key={i} className="fa-solid fa-star text-blue-400  text-xl"></i>)
+            stars.push(<i key={i} className="fa-solid fa-star text-accent  text-xl"></i>)
         }
         if (rating - Math.floor(rating) > 0) {
-            stars.push(<i key={'half'} className="fa-solid fa-star-half-stroke text-blue-400 text-xl "></i>)
+            stars.push(<i key={'half'} className="fa-solid fa-star-half-stroke text-accent text-xl "></i>)
         }
         return stars
     }
@@ -54,29 +62,29 @@ export default async function page(props: { params: Promise<{ productId: string 
         <main className=' mb-15 mt-[100px] md:mt-[210px]  w-[90%] mx-auto' >
             <section className=' productDetails grid grid-cols-12 grid-rows-7 gap-4 ' >
 
-                <div className=' col-span-12 xl:col-span-6 row-span-5 xl:row-span-7 w-full mx-auto xl:w-full rounded-xl '>
+                <div className=' col-span-12 xl:col-span-6 row-span-5 xl:row-span-7 w-full mx-auto xl:w-full rounded-2xl '>
                     <ProductDetailsImageSlider defaultImage={productDetails.imageCover} product={productDetails} />
                 </div>
 
-                <div className='content p-5 rounded-xl bg-white col-span-12 xl:col-span-6 row-span-2 xl:row-span-2 -order-1 xl:order-2 '>
-                    <h1 className='text-xl md:text-3xl lg:text-4xl text-slate-600 font-bold ' > {productDetails.title} </h1>
-                    <h2 className='text-lg md:text-xl text-slate-500 my-6 leading-8  border-b-1 border-b-slate-300 pb-6' > {productDetails.description} </h2>
+                <div className='   border-border shadow-xl  content p-5 rounded-2xl col-span-12 xl:col-span-6 row-span-2 xl:row-span-2 -order-1 xl:order-2 '>
+                    <h1 className='text-xl md:text-3xl lg:text-4xl font-bold ' > {productDetails.title} </h1>
+                    <h2 className='text-lg md:text-xl text-sidebar-foreground my-6 leading-8  border-b-1 border-b-slate-300 pb-6' > {productDetails.description} </h2>
                     <p className='my-6' >
-                        <span className='text-slate-400 me-2 text-xl' >
+                        <span className='text-secondary-foreground me-2 text-xl' >
                             {productDetails.ratingsAverage}
                         </span>
                         <span>
                             {handleShowingRating(productDetails?.ratingsAverage)}
                         </span>
-                        <span className=' text-slate-400 ' >  {productDetails?.ratingsQuantity} Ratings </span>
+                        <span className=' text-secondary-foreground ' >  {productDetails?.ratingsQuantity} Ratings </span>
                     </p >
 
-                    <p className=' mt-6 text-blue-400 ' >
-                        <span className='me-2 text-slate-500 text-lg font-medium' >
+                    <p className=' mt-6 text-primary ' >
+                        <span className='me-2 text-foreground text-lg font-medium' >
                             Brand:
                         </span>
                         <Link
-                            href={`/brands/${productDetails.brand._id}`}
+                            href={`/brands/${productDetails.brand.slug}?id=${productDetails.brand._id}`}
                             className='  hover:underline cursor-pointer'
                         >
                             {productDetails.brand.name}
@@ -84,39 +92,39 @@ export default async function page(props: { params: Promise<{ productId: string 
                     </p>
 
                     <div className=' my-6  ' >
-                        <span className='me-2 text-slate-500 text-lg font-medium' >Price: </span>
+                        <span className='me-2 text-foreground text-lg font-medium' >Price: </span>
                         {productDetails.priceAfterDiscount ? (<>
-                            <span className=' line-through text-slate-500' > {productDetails.price}  </span>
-                            <span className='  me-2  text-slate-500' >EGP</span>
+                            <span className=' line-through text-muted-foreground' > {productDetails.price}  </span>
+                            <span className='  me-2  text-muted-foreground ' >EGP</span>
                             <span className=' text-red-700 font-medium  ' > {productDetails.priceAfterDiscount} </span>
 
                         </>
                         ) : (
-                            <span className='text-slate-500   font-medium ' > {productDetails.price}  </span>
+                            <span className='text-muted-foreground   font-medium ' > {productDetails.price}  </span>
                         )}
-                        <span className=' text-slate-500   font-medium ' >
+                        <span className=' text-red-700   font-medium ' >
                             EGP
                         </span>
 
                         {productDetails.priceAfterDiscount != 0 && discountPercentage != 0 && (
-                            <span className=' ms-3  px-3 py-2 bg-blue-400 font-bold text-white rounded-full text-sm ' >
+                            <span className=' ms-3  px-3 py-2 bg-accent font-bold text-accent-foreground rounded-full text-sm ' >
                                 {discountPercentage}% OFF
                             </span>
                         )}
                     </div>
                 </div>
 
-                <div className='p-5 bg-white rounded-xl addToCart col-span-12 xl:col-span-6 row-span-1 xl:row-span-4 order-3 mt-0 lg:mt-7 xl:mt-0 ' >
+                <div className='  border-border shadow-xl  addToCart p-5 rounded-2xl col-span-12 xl:col-span-6 row-span-1 xl:row-span-4 order-3 mt-0 lg:mt-7 xl:mt-0 ' >
 
                     <div className=' flex justify-center items-center ' >
                         <AddToCart product={productDetails} />
                         <AddToWishlist product={productDetails} />
                     </div>
 
-                    <div className=' pt-3 mt-3 border-t-1 border-t-slate-300 text-slate-600 ' >
+                    <div className=' pt-3 mt-3 border-t-1 border-border  ' >
 
                         <div className=' flex mb-3' >
-                            <span className='me-3 text-slate-400 ' >
+                            <span className='me-3  ' >
                                 <i className="fa-solid fa-truck"></i>
                             </span>
                             <p>
@@ -130,7 +138,7 @@ export default async function page(props: { params: Promise<{ productId: string 
                         </div>
 
                         <div className=' flex mb-3' >
-                            <span className='me-3 text-slate-400 ' >
+                            <span className='me-3 ' >
                                 <i className="fa-solid fa-shield-halved"></i>
                             </span>
                             <p>
@@ -144,7 +152,7 @@ export default async function page(props: { params: Promise<{ productId: string 
                         </div>
 
                         <div className=' flex mb-3' >
-                            <span className='me-3 text-slate-400 ' >
+                            <span className='me-3 ' >
                                 <i className="fa-solid fa-arrow-right-arrow-left"></i>
                             </span>
                             <p>
@@ -164,7 +172,7 @@ export default async function page(props: { params: Promise<{ productId: string 
             </section>
 
             {similarProducts && (
-                <section>
+                <section  className=' border-border shadow-xl   py-3 rounded-2xl mt-5 ' >
                     < CustomSlider imageArea='cover' sliderName='Similar Products' slides={similarProducts.data!} slideType='product' />
                 </section>
             )}

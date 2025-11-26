@@ -24,7 +24,7 @@ export default function ClearCart() {
 
     return (
         <Button
-            className='w-37 text-red-600 py-5  bg-white border-2 border-red-600 hover:bg-red-600 hover:text-white hover:border-white cursor-pointer transition-colors duration-300 rounded-full '
+            className='w-37 text-secondary-foreground py-5  bg-secondary border-2 border-border   hover:bg-secondary cursor-pointer transition-colors duration-300 rounded-full '
             onClick={handleClearingCart}
             aria-disabled={isLoading}
         >

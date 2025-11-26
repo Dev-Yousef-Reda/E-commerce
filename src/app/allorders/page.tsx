@@ -4,7 +4,6 @@ import { addressType } from '../checkout/checkout.types'
 import { AddressHoverCard } from './HoverCard/AddressHoverCard'
 import { cartProductType } from '_/types/cart.types'
 import Image from 'next/image'
-import Link from 'next/link'
 
 type userType = {
   _id: string,
@@ -55,8 +54,8 @@ export default async function page() {
       </h1>
 
       {allorders?.map((order) =>
-        <section key={order._id} className='bg-white  rounded-xl not-last:mb-5 ' >
-          <header className='bg-neutral-100 grid grid-cols-2 md:grid-cols-4 gap-5 p-5 rounded-t-xl text-slate-500 uppercase' >
+        <section key={order._id} className='border-border shadow-xl  rounded-xl not-last:mb-5 bg-card ' >
+          <header className=' grid grid-cols-2 bg-accent md:grid-cols-4 gap-5 p-5 rounded-t-xl text-accent-foreground uppercase' >
             <div className='w-max ' >
               <p>Order Placed</p>
               <p> {detectDate(order.createdAt)} </p>
@@ -82,7 +81,6 @@ export default async function page() {
 
               <div className='' key={item.product._id}  >
                 <div className='text-slate-500' >
-                  <Link href={`/products/${item.product._id}`} className={`cursor-pointer`}>
                     <div className='w-[100px] ' >
                       < Image
                         src={item.product.imageCover}
@@ -93,11 +91,10 @@ export default async function page() {
                       />
                     </div>
 
-                    <div>
-                      <p className='line-clamp-1' > {(item.product.title).split(' ', 2).join(' ')} </p>
+                    <div className='text-foreground mt-3' >
+                      <p className='line-clamp-1 mb-1.5 ' > {(item.product.title).split(' ', 2).join(' ')} </p>
                       <p> count: {item.count} </p>
                     </div>
-                  </Link>
                 </div>
               </div>
 

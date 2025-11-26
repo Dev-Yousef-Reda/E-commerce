@@ -28,7 +28,7 @@ export function NavigationMenuDemo({ products, categories }
 
                 {categories.map((category) =>
                     <NavigationMenuItem key={category._id} >
-                        <Link href={`/categories/${category._id}`} >
+                        <Link href={`/categories/${category.slug}?categoryId=${category._id}`} >
                             <NavigationMenuTrigger> {category.name} </NavigationMenuTrigger>
                         </Link>
                         <SubCategories categoryId={category._id} key={category._id} products={products} />

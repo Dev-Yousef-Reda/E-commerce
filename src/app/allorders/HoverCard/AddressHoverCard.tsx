@@ -12,7 +12,7 @@ export function AddressHoverCard({ address }: { address: addressType }) {
             <HoverCardTrigger asChild>
                 <Button
                     variant="link"
-                    className='p-0 text-blue-400 '
+                    className='p-0 text-foreground '
                 >
                     {address.city}
                 </Button>

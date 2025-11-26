@@ -45,12 +45,12 @@ export default function CustomSlider({ sliderName, slides, imageArea, slideType 
 
     return (
 
-        <section className=" w-[90%] mx-auto my-15 relative  mt-[100px] " >
+        <section className=" w-[90%] mx-auto my-15 relative   " >
 
             <h2
-                className='flex justify-between items-center mb-4 pb-5 border-b-2 border-b-slate-100 text-2xl lg:text-4xl'
+                className='flex justify-between items-center mb-4 pb-5 border-b-2 border-b-secondary  text-2xl lg:text-4xl'
             >
-                <span className=' text-slate-600 font-bold ' >
+                <span className=' text-foreground font-bold ' >
                     {sliderName}
                 </span>
             </h2>
@@ -95,13 +95,13 @@ export default function CustomSlider({ sliderName, slides, imageArea, slideType 
                         (slides as categoryType[]).map((slide) => (
 
                             <SwiperSlide key={slide.name} className="mt-[50px] " >
-                                <div className='text-center'  >
+                                <div className='text-center   '  >
                                     <Link
                                         className="cursor-pointer"
-                                        href={`/categories/${slide._id}`}
+                                        href={`/categories/${slide.name}?categoryId=${slide._id}`}
                                     >
 
-                                        <div className="image-container">
+                                        <div className="image-container rounded-xl  border border-border shadow-lg shadow-primary/10">
                                             <Image
                                                 width={500}
                                                 height={500}
@@ -124,9 +124,9 @@ export default function CustomSlider({ sliderName, slides, imageArea, slideType 
                         (slides as productType[]).map((slide) => (
 
                             <SwiperSlide key={slide.id} className="mt-[50px] " >
-                                <div className='text-center'  >
-                                    <Link className="cursor-pointer" href={`/products/${slide.id}`} >
-                                        <div className="image-container">
+                                <div className='text-center  '  >
+                                    <Link className="cursor-pointer" href={`/products/${slide.slug}?id=${slide.id}`} >
+                                        <div className="image-container  border border-border shadow-lg shadow-primary/10">
                                             <Image
                                                 src={`${slide.imageCover}`}
                                                 alt=""
@@ -136,7 +136,7 @@ export default function CustomSlider({ sliderName, slides, imageArea, slideType 
                                             />
                                         </div>
                                         <h3
-                                            className=' font-bold text-xl mt-3 text-slate-700 '
+                                            className=' font-bold text-xl mt-3 text-muted-foreground line-clamp-1 '
                                         >
                                             {`${(slide.title).split(' ', 3).join(' ')}`}
                                         </h3>

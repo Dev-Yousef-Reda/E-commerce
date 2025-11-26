@@ -10,7 +10,7 @@ export default function RootLayoutClientRender({ children }: { children: React.R
 
     const pathName = usePathname()
 
-    const cleanUI = ['/signin', '/signup', '/userProfile', '/forgot-password'].some((path) => pathName.includes(path))
+    const cleanUI = ['/signin', '/signup', '/user-profile', '/forgot-password'].some((path) => pathName.includes(path))
 
     return (
         <>

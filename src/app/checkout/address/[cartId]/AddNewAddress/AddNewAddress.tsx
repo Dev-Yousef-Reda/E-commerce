@@ -53,7 +53,7 @@ export default function AddNewAddress({ cartId }: { cartId: string }) {
                 <DialogTrigger asChild>
                     <Button
                         variant="outline"
-                        className="text-sm text-blue-400 hover:underline cursor-pointer bg-transparent border-none hover:text-blue-500 p-0"
+                        className="text-sm cursor-pointer text-secondary-foreground hover:text-secondary-foreground border-none bg-secondary  hover:bg-secondary  hover:underline rounded-full underline-offset-4 block mx-auto "
                     >
                         Add New Address
                     </Button>
@@ -66,7 +66,7 @@ export default function AddNewAddress({ cartId }: { cartId: string }) {
                     </DialogHeader>
 
                     <form
-                        className="text-center"
+                        className="text-center flex flex-col gap-1.5 "
                         onSubmit={handleSubmit(customHandleSubmit)} >
 
                         <Controller
@@ -83,7 +83,7 @@ export default function AddNewAddress({ cartId }: { cartId: string }) {
                                         aria-invalid={fieldState.invalid}
                                         placeholder="city"
                                         autoComplete="city"
-                                        className='border-slate-400 rounded-full '
+                                        className='border-border rounded-full '
                                     />
 
                                     {fieldState.invalid && (
@@ -106,7 +106,7 @@ export default function AddNewAddress({ cartId }: { cartId: string }) {
                                         aria-invalid={fieldState.invalid}
                                         placeholder="details"
                                         autoComplete="details"
-                                        className='border-slate-400 rounded-full '
+                                        className='border-border rounded-full '
                                     />
 
                                     {fieldState.invalid && (
@@ -129,7 +129,7 @@ export default function AddNewAddress({ cartId }: { cartId: string }) {
                                         aria-invalid={fieldState.invalid}
                                         placeholder="phone"
                                         autoComplete="phone"
-                                        className='border-slate-400 rounded-full '
+                                        className='border-border rounded-full '
                                     />
 
                                     {fieldState.invalid && (
@@ -139,19 +139,23 @@ export default function AddNewAddress({ cartId }: { cartId: string }) {
                             )}
                         />
                         {isLoading ?
-                            <button
-                                type='submit'
-                                className='bg-blue-400 my-3 font-bold px-2 py-2.5 rounded-lg text-white cursor-not-allowed'
-                                disabled
-                            >
-                                Loading...
-                            </button>
+                            <div className="text-center" >
+                                <button
+                                    type='submit'
+                                    className='bg-primary  my-3 font-semibold px-2 py-2.5 rounded-full text-primary-foreground cursor-not-allowed'
+                                    disabled
+                                >
+                                    Loading...
+                                </button>
+                            </div>
                             :
-                            <button
-                                type='submit'
-                                className='bg-blue-400 my-3 font-bold px-2 py-2.5 rounded-lg text-white cursor-pointer'>
-                                Deliver to this  Address
-                            </button>
+                            <div className="text-center  " >
+                                <button
+                                    type='submit'
+                                    className='bg-primary text-sm  my-3 font-semibold px-2 py-2.5 rounded-full text-primary-foreground cursor-pointer'>
+                                    Deliver to this  Address
+                                </button>
+                            </div>
                         }
                     </form>
 

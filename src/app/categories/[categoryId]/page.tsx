@@ -4,19 +4,21 @@ import { getProductsByCategory } from '_/app/_services/products.services'
 import React from 'react'
 import Image from 'next/image'
 
-export async function generateMetadata({ params }: { params: Promise<{ categoryId: string }> }) {
-    const res = await params
+
+
+export async function generateMetadata({ searchParams }: { searchParams: Promise<{ categoryId: string }> }) {
+    const res = await searchParams
     const categoryId = res.categoryId
     const categoryDetails = await getSpecificCategory(categoryId)
 
     return {
-        title: `${categoryDetails?.slug}`,
+        title: `${categoryDetails?.name ?? 'category'}`,
     }
 }
 
-export default async function page(props: { params: Promise<{ categoryId: string }> }) {
+export default async function page({ searchParams }: { searchParams: Promise<{ categoryId: string }> }) {
 
-    const res = await props.params
+    const res = await searchParams
     const categoryId = res.categoryId
     const categoryDetails = await getSpecificCategory(categoryId)
 
@@ -34,7 +36,7 @@ export default async function page(props: { params: Promise<{ categoryId: string
                         className='w-full h-full max-h-[70vh] object-fill xl:object-contain rounded-xl overflow-hidden '
                     />
                 </div>
-                <p className='text-center text-slate-600 font-semibold my-3 bg-white p-5 rounded-xl' >
+                <p className='text-center font-semibold my-3 shadow-xl border-border text-foreground p-5 rounded-xl' >
                     No products are available in this category
                 </p>
             </div>
@@ -44,11 +46,11 @@ export default async function page(props: { params: Promise<{ categoryId: string
     return (
         <main className=' mt-[100px] md:mt-[180px]  w-[90%] mx-auto overflow-auto my-10' >
             <h1
-                className='flex justify-between items-center my-4 pb-5 border-b-2 border-b-slate-100 font-bold text-slate-600'
+                className='flex justify-between items-center my-4 pb-5 border-b-2 border-b-border font-bold text-foreground'
             >
                 <span className='text-lg md:text-2xl lg:text-4xl  ' > {categoryDetails?.name}  </span>
             </h1>
-            
+
             <div className='   mx-auto max-h-[70vh] mt-[20px] ' >
                 <Image
                     src={categoryDetails?.image ?? ''}

@@ -25,7 +25,6 @@ export function HeroSection({
       <div className="mx-auto w-[90%] px-0 flex max-w-container flex-col gap-12 sm:gap-24">
         <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
 
-
           {/* Title */}
           <h1 className="relative z-10 inline-block animate-appear bg-gradient-to-r from-foreground to-muted-foreground w-full
           bg-clip-text text-4xl font-semibold leading-tight text-transparent drop-shadow-2xl
@@ -41,10 +40,11 @@ export function HeroSection({
           </p>
 
           <ul
-            className='flex  flex-wrap animate-appear  '
+            className='flex  flex-wrap animate-appear pb-4 '
           >
+
             <li className=' px-4 mt-7 w-full md:w-[50%] lg:w-1/3' >
-              <div className='bg-white rounded-lg  backdrop-blur-xl  md:min-h-[250px]  py-7 px-5' >
+              <div className='rounded-3xl border shadow-lg bg-white shadow-primary/10 md:min-h-[250px]  py-7 px-5 text-card-foreground ' >
                 <p className='mb-3 lg:text-xl font-bold capitalize  ' >
                   Assured Quality and transactions
                 </p>
@@ -53,8 +53,9 @@ export function HeroSection({
                 </p>
               </div>
             </li>
+
             <li className='  px-4 mt-7 w-full md:w-[50%] lg:w-1/3' >
-              <div className='bg-white rounded-lg  backdrop-blur-xl md:min-h-[250px] py-7 px-5' >
+              <div className='rounded-3xl border shadow-lg bg-white shadow-primary/10 md:min-h-[250px] py-7 px-5  text-card-foreground' >
                 <p className='mb-3 lg:text-xl font-bold capitalize ' >
                   Fast & Reliable Delivery
                 </p>
@@ -65,8 +66,9 @@ export function HeroSection({
                 </p>
               </div>
             </li>
+
             <li className='  px-4 mt-7 w-full md:w-[50%] lg:w-1/3' >
-              <div className='bg-white rounded-lg  backdrop-blur-xl md:min-h-[250px] py-7 px-5' >
+              <div className='rounded-3xl border shadow-lg bg-white shadow-primary/10 md:min-h-[250px] py-7 px-5  text-card-foreground' >
                 <p className='mb-3 lg:text-xl font-bold capitalize' >
                   Trusted by Thousands of Customers
                 </p>
@@ -79,6 +81,7 @@ export function HeroSection({
                 </p>
               </div>
             </li>
+        
           </ul>
 
         </div>

@@ -17,7 +17,7 @@ export default function MainImage({ product, defaultImage }: { product: productT
 
     return (
         <>
-            <div className='overflow-hidden relative ' >
+            <div className='overflow-hidden relative --card ' >
                 <div className="image-container mt-2   group-hover:scale-[1.1] transition-all duration-300">
                     <Image
                         width={500}
@@ -30,14 +30,14 @@ export default function MainImage({ product, defaultImage }: { product: productT
                 </div>
 
                 {product.priceAfterDiscount != 0 && discountPercentage != 0 && (
-                    <div className=' absolute px-3 py-2 bg-blue-300 font-bold text-white bottom-[5%] right-[5%] rounded-full text-sm  ' >
+                    <div className=' absolute px-3 py-2 font-bold bg-accent text-accent-foreground  bottom-[5%] right-[5%] rounded-full text-sm  ' >
                         {discountPercentage}% OFF
                     </div>
                 )}
             </div>
 
-            <div className='bg-blue-300' >
-                <ul className=' flex gap-3 bg-blue-200  px-1.5 py-3 ' >
+            <div className='bg-white' >
+                <ul className=' flex gap-3 --secondary  px-1.5 py-3 ' >
                     {product.images.slice(0, 4).map((image) =>
                         <li
                             className='w-1/4 rounded-lg overflow-hidden cursor-pointer'

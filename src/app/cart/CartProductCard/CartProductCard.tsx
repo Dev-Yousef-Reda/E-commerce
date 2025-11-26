@@ -9,7 +9,7 @@ export default function CartProductCard({ product, showOrderActions }: { product
 
     return (
         <>
-            <div className='flex gap-2 py-2 not-last:border-b-1 border-b-slate-300' >
+            <div className='flex gap-2 py-2 not-last:border-b-1 border-b-border' >
                 <div>
                     <Image
                         src={product.product.imageCover}
@@ -37,7 +37,7 @@ export default function CartProductCard({ product, showOrderActions }: { product
                     )}
                 </div>
                 <div className='flex items-center'>
-                    <h3 className='font-bold text-slate-600 w-max'> Price: {Number(product.price) * product.count } </h3>
+                    <h3 className='font-bold text-foreground w-max'> Price: {Number(product.price) * product.count } </h3>
                 </div>
             </div>
         </>

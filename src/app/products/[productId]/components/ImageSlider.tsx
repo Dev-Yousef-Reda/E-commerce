@@ -34,7 +34,7 @@ export function ImageSlider({ product, setMainImage, orientation }:
         {product.images.map((image, index) => (
           <CarouselItem key={index} className={`${orientation ? 'basis-1/6  ' : 'basis-1/2'}`}>
             <div className="  ">
-              <Card className="w-full mx-auto p-0 border-1 border-blue-300 hover:border-3 rounded-xl  overflow-hidden  cursor-pointer  transition-all duration-100" >
+              <Card className="w-full mx-auto p-0 border-1 border-border shadow-lg hover:border-3 rounded-xl  overflow-hidden  cursor-pointer  transition-all duration-100" >
 
                 <CardContent className=" p-0 ">
 

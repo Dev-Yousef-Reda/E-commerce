@@ -11,7 +11,6 @@ export const metadata = {
     title: 'Profile'
 }
 
-
 export default async function RootLayout({
     children,
 }: {
@@ -28,7 +27,7 @@ export default async function RootLayout({
                 >
 
                     <section
-                        className=' flex gap-3 items-center p-3 rounded-xl bg-white mb-3 '
+                        className=' flex gap-3 items-center p-3 rounded-xl  border-border shadow-xl mb-3 '
                     >
                         <div
                             className=' w-[62px] h-[62px] rounded-full  relative  '
@@ -40,21 +39,21 @@ export default async function RootLayout({
                             />
                         </div>
 
-                        <div className="text-slate-600 font-bold text-lg  " >
+                        <div className="text-foreground font-bold text-lg  " >
                             <p> Hey {(userSession?.user.name)?.split(' ', 1)} ! </p>
-                            <p className='font-semibold text-sm text-slate-400 mt-1' > {userSession?.user.email} </p>
+                            <p className='font-semibold text-sm text-muted-foreground mt-1' > {userSession?.user.email} </p>
                         </div>
 
                     </section>
 
                     <section
-                        className=' items-center p-3 rounded-xl bg-white mb-3 '
+                        className=' items-center p-3 rounded-xl  border-border shadow-xl mb-3 '
                     >
 
                         <Link
                             href={'/allorders'}
-                            className="text-slate-600 text-lg font-semibold p-3 mb-3
-                            hover:bg-neutral-100 transition-colors duration-300 w-full block rounded-xl "
+                            className="text-foreground text-lg font-semibold p-3 mb-3
+                            hover:bg-accent hover:text-accent-foreground transition-colors duration-300 w-full block rounded-xl "
                         >
                             <span className="me-3" >
                                 <i className="fa-solid fa-bag-shopping"></i>
@@ -67,8 +66,8 @@ export default async function RootLayout({
 
                         <Link
                             href={'/cart'}
-                            className="text-slate-600 text-lg font-semibold p-3 mb-3
-                            hover:bg-neutral-100 transition-colors duration-300 w-full block rounded-xl "
+                            className="text-foreground text-lg font-semibold p-3 mb-3
+                            hover:bg-accent hover:text-accent-foreground transition-colors duration-300 w-full block rounded-xl "
                         >
                             <span className="me-3" >
                                 <i className="fa-solid fa-cart-plus"></i>
@@ -81,8 +80,8 @@ export default async function RootLayout({
 
                         <Link
                             href={'/wishlist'}
-                            className="text-slate-600 text-lg font-semibold p-3
-                            hover:bg-neutral-100 transition-colors duration-300 w-full block rounded-xl "
+                            className="text-foreground text-lg font-semibold p-3 
+                            hover:bg-accent hover:text-accent-foreground transition-colors duration-300 w-full block rounded-xl "
                         >
                             <span className="me-3" >
                                 <i className="fa-regular fa-heart"></i>
@@ -95,16 +94,16 @@ export default async function RootLayout({
 
                     </section>
 
-                    <p className='text-slate-600 ps-3 mb-3 text-lg font-bold' >Account</p>
+                    <p className='text-foreground ps-3 mb-3 text-lg font-bold' >Account</p>
 
                     <section
-                        className=' items-center p-3 rounded-xl bg-white mb-3 '
+                        className=' items-center p-3 rounded-xl border-border shadow-xl mb-3 '
                     >
 
                         <Link
                             href={'/userProfile'}
-                            className="text-slate-600 text-lg font-semibold p-3 mb-3
-                            hover:bg-neutral-100 transition-colors duration-300 w-full block rounded-xl "
+                            className="text-foreground text-lg font-semibold p-3 mb-3
+                            hover:bg-accent hover:text-accent-foreground transition-colors duration-300 w-full block rounded-xl "
                         >
                             <span className="me-3" >
                                 <i className="fa-regular fa-circle-user"></i>
@@ -117,8 +116,8 @@ export default async function RootLayout({
 
                         <Link
                             href={'/userProfile/addresses'}
-                            className="text-slate-600 text-lg font-semibold p-3 
-                            hover:bg-neutral-100 transition-colors duration-300 w-full block rounded-xl "
+                            className="text-foreground text-lg font-semibold p-3 
+                            hover:bg-accent hover:text-accent-foreground transition-colors duration-300 w-full block rounded-xl "
                         >
                             <span className="me-3" >
                                 <i className="fa-solid fa-location-dot"></i>
@@ -131,16 +130,16 @@ export default async function RootLayout({
 
                     </section>
 
-                    <p className='text-slate-600 ps-3 mb-3 text-lg font-bold' >Other</p>
+                    <p className='text-foreground ps-3 mb-3 text-lg font-bold' >Other</p>
 
                     <section
-                        className=' items-center p-3 rounded-xl bg-white mb-3 '
+                        className=' items-center p-3 rounded-xl border-border shadow-xl mb-3 '
                     >
 
                         <Link
                             href={'/userProfile/settings'}
-                            className="text-slate-600 text-lg font-semibold p-3 
-                            hover:bg-neutral-100 transition-colors duration-300 w-full block rounded-xl "
+                            className="text-foreground text-lg font-semibold p-3 
+                            hover:bg-accent hover:text-accent-foreground transition-colors duration-300 w-full block rounded-xl "
                         >
                             <span className="me-3" >
                                 <i className="fa-solid fa-user-shield"></i>
@@ -154,7 +153,7 @@ export default async function RootLayout({
                     </section>
 
                     <section
-                        className=' items-center p-3 rounded-xl bg-white mb-3 '
+                        className=' items-center p-3 rounded-xl border-border shadow-xl mb-3 '
                     >
 
                         <Signout />

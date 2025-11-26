@@ -114,7 +114,7 @@ export default function Login() {
 
                 {isLoading ?
                     <Button
-                        className=' rounded-full text-lg bg-blue-400 hover:bg-blue-500 transition-colors duration-300 cursor-pointer text-white font-bold w-full mt-5 py-5 '
+                        className=' rounded-full text-lg bg-primary/90 hover:bg-primary transition-colors duration-300 cursor-pointer text-white font-bold w-full mt-5 py-5 '
                         variant="outline"
                         disabled
                     >
@@ -124,7 +124,7 @@ export default function Login() {
                     :
                     <Button
                         type='submit'
-                        className=' rounded-full text-lg bg-blue-400 hover:bg-blue-500 transition-colors duration-300 cursor-pointer text-white font-bold w-full mt-5 py-5 '
+                        className=' rounded-full text-lg bg-primary/90 hover:bg-primary transition-colors duration-300 cursor-pointer text-white font-bold w-full mt-5 py-5 '
                     >
                         Sign in
                     </Button>

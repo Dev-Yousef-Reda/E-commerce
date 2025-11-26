@@ -18,7 +18,7 @@ function NavigationMenu({
       data-slot="navigation-menu"
       data-viewport={viewport}
       className={cn(
-        "group/navigation-menu mx-auto flex max-w-max flex-1 items-center justify-center",
+        "group/navigation-menu mx-auto flex max-w-max flex-1 items-center justify-center bg-background ",
         className
       )}
       {...props}
@@ -37,7 +37,7 @@ function NavigationMenuList({
     <NavigationMenuPrimitive.List
       data-slot="navigation-menu-list"
       className={cn(
-        "group flex flex-wrap  static list-none items-center justify-center gap-1.5",
+        "group flex flex-wrap  static list-none items-center justify-center gap-1.5 bg-secondary/40  backdrop-blur-sm ",
         className
       )}
       {...props}
@@ -52,7 +52,7 @@ function NavigationMenuItem({
   return (
     <NavigationMenuPrimitive.Item
       data-slot="navigation-menu-item"
-      className={cn("static", className)}
+      className={cn("static  ", className)}
       {...props}
     />
   )
@@ -70,7 +70,7 @@ function NavigationMenuTrigger({
   return (
     <NavigationMenuPrimitive.Trigger
       data-slot="navigation-menu-trigger"
-      className={cn(navigationMenuTriggerStyle(), "group cursor-pointer ", className)}
+      className={cn(navigationMenuTriggerStyle(), "group cursor-pointer text-secondary-foreground font-semibold  hover:bg-accent hover:text-accent-foreground bg-transparent ", className)}
       {...props}
   
     >

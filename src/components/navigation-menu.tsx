@@ -167,11 +167,11 @@ function NavGridCard({
 		<NavigationMenuPrimitive.Link asChild>
 			<GridCard {...props}>
 				<div className="relative">
-					<span className="text-foreground/80 text-sm font-medium">
+					<span className=" --secondary-foreground text-sm font-medium">
 						{link.title}
 					</span>
 					{link.description && (
-						<p className="text-muted-foreground mt-2 text-xs">
+						<p className=" mt-2 text-xs">
 							{link.description}
 						</p>
 					)}

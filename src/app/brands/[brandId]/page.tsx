@@ -5,20 +5,29 @@ import Image from 'next/image'
 import { getBrandById } from '_/app/_services/brands.services'
 
 
-export async function generateMetadata({ params }: { params: Promise<{ brandId: string }> }) {
-    const res = await params
-    const brandId = res.brandId
+type SearchParams = Promise<{
+    id: string;
+}>;
+
+type PageProps = {
+    searchParams: SearchParams;
+};
+
+export async function generateMetadata({ searchParams }: PageProps) {
+    const result = (await searchParams).id
+
+    const brandId = result
     const brandDetails = await getBrandById(brandId)
 
     return {
-        title: `Brand | ${brandDetails?.slug}`,
+        title: `Brand | ${brandDetails?.name}`,
     }
 }
 
-export default async function page(props: { params: Promise<{ brandId: string }> }) {
+export default async function page({ searchParams }: PageProps) {
 
-    const res = await props.params
-    const brandId = res.brandId
+    const res = (await searchParams).id
+    const brandId = res
     const brandDetails = await getBrandById(brandId)
 
     const brandProducts = await getProductsByBrand(brandId)
@@ -27,7 +36,7 @@ export default async function page(props: { params: Promise<{ brandId: string }>
 
         <main className='mt-[100px] md:mt-[210px] w-[90%] mx-auto overflow-auto my-10' >
             <h1
-                className='flex justify-between items-center mb-4 mt-0 pt-0 pb-5 border-b-2 border-b-slate-100 font-bold text-slate-600'
+                className='flex justify-between items-center mb-4 mt-0 pt-0 pb-5 border-b-2 border-b-border font-bold text-foreground'
             >
                 <span className='text-lg md:text-2xl lg:text-4xl  ' > {brandDetails?.name}  </span>
             </h1>
