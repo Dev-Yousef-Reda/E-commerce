@@ -24,7 +24,7 @@ export default async function page() {
             <section className='border-border shadow-xl px-5 py-3 rounded-xl ' >
                 {wishlistProducts.data.map((product) =>
                     <div
-                        className=' flex justify-between items-center my-3 flex-col md:flex-row w-full  not-last:border-b-1 border-b-slate-200 pb-3 '
+                        className=' flex justify-between items-center my-3 flex-col md:flex-row w-full  not-last:border-b-1 border-b-border pb-3 '
                         key={product.id}
                     >
                         <div className='flex w-full justify-between items-center gap-3 grow  ' >
