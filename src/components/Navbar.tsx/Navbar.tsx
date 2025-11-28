@@ -143,7 +143,7 @@ export default function Navbar({ showMegaMenu = true }: { showMegaMenu?: boolean
                                 <Input
                                     type="text"
                                     placeholder="What are you looking for? "
-                                    className={`px-5 py-7 rounded-full  placeholder:text-secondary-foreground text-xs md:font-semibold `}
+                                    className={`px-5 py-7 rounded-full  placeholder:text-secondary-foreground/50 text-xs md:font-semibold `}
                                     ref={search}
                                 />
                                 <Button
