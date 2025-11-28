@@ -50,6 +50,7 @@ export default function AddNewAddress({ setAddresses, setDefaultAddress }:
         localStorage.setItem('addresses', JSON.stringify(addresses))
         setAddresses(JSON.stringify(addresses))
         setIsOpen(false)
+        setIsLoading(false)
     }
 
     return (
@@ -60,7 +61,7 @@ export default function AddNewAddress({ setAddresses, setDefaultAddress }:
                 <DialogTrigger asChild>
                     <Button
                         variant="outline"
-                        className="text-sm text-blue-400 hover:underline cursor-pointer bg-transparent border-none hover:text-blue-500 "
+                        className="text-sm text-secondary-foreground bg-secondary hover:underline cursor-pointer  rounded-full font-semibold px-5 w-max max-w-fit block mx-auto border-none hover:bg-secondary hover:text-secondary-foreground  "
                     >
                         Add New Address
                     </Button>
@@ -81,7 +82,7 @@ export default function AddNewAddress({ setAddresses, setDefaultAddress }:
                             control={control}
                             render={({ field, fieldState }) => (
                                 <Field data-invalid={fieldState.invalid}>
-                                    <FieldLabel htmlFor="city">
+                                    <FieldLabel htmlFor="city" className="text-foreground">
                                         City :
                                     </FieldLabel>
                                     <Input
@@ -90,7 +91,7 @@ export default function AddNewAddress({ setAddresses, setDefaultAddress }:
                                         aria-invalid={fieldState.invalid}
                                         placeholder="city"
                                         autoComplete="city"
-                                        className='border-slate-400 rounded-full '
+                                        className='border-border rounded-full '
                                     />
 
                                     {fieldState.invalid && (
@@ -103,8 +104,8 @@ export default function AddNewAddress({ setAddresses, setDefaultAddress }:
                             name="details"
                             control={control}
                             render={({ field, fieldState }) => (
-                                <Field data-invalid={fieldState.invalid}>
-                                    <FieldLabel htmlFor="details">
+                                <Field data-invalid={fieldState.invalid} className="my-2" >
+                                    <FieldLabel htmlFor="details" className="text-foreground">
                                         Details :
                                     </FieldLabel>
                                     <Input
@@ -113,7 +114,7 @@ export default function AddNewAddress({ setAddresses, setDefaultAddress }:
                                         aria-invalid={fieldState.invalid}
                                         placeholder="details"
                                         autoComplete="details"
-                                        className='border-slate-400 rounded-full '
+                                        className='border-border rounded-full '
                                     />
 
                                     {fieldState.invalid && (
@@ -127,7 +128,7 @@ export default function AddNewAddress({ setAddresses, setDefaultAddress }:
                             control={control}
                             render={({ field, fieldState }) => (
                                 <Field data-invalid={fieldState.invalid}>
-                                    <FieldLabel htmlFor="phone">
+                                    <FieldLabel htmlFor="phone" className="text-foreground">
                                         Phone :
                                     </FieldLabel>
                                     <Input
@@ -136,7 +137,7 @@ export default function AddNewAddress({ setAddresses, setDefaultAddress }:
                                         aria-invalid={fieldState.invalid}
                                         placeholder="phone"
                                         autoComplete="phone"
-                                        className='border-slate-400 rounded-full '
+                                        className='border-border rounded-full '
                                     />
 
                                     {fieldState.invalid && (
@@ -148,7 +149,7 @@ export default function AddNewAddress({ setAddresses, setDefaultAddress }:
                         {isLoading ?
                             <button
                                 type='submit'
-                                className='bg-blue-400 my-3 font-bold px-2 py-2.5 rounded-lg text-white cursor-not-allowed'
+                                className='bg-primary/90  my-3 font-semibold text-primary-foreground px-6 py-2.5 rounded-full cursor-not-allowed'
                                 disabled
                             >
                                 Loading...
@@ -156,7 +157,7 @@ export default function AddNewAddress({ setAddresses, setDefaultAddress }:
                             :
                             <button
                                 type='submit'
-                                className='bg-blue-400 my-3 font-bold px-2 py-2.5 rounded-lg text-white cursor-pointer'>
+                                className='bg-primary my-3 font-semibold rounded-full  py-1.5 px-4 text-primary-foreground  cursor-pointer'>
                                 Deliver to this  Address
                             </button>
                         }

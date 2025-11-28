@@ -38,18 +38,18 @@ export default function AddAddress() {
     return (
         <>
 
-            <h1 className='font-bold text-slate-600 text-xl mb-5' >
+            <h1 className='font-bold text-foreground text-xl mb-5' >
                 Addresses
             </h1>
 
-            <main className='  bg-white rounded-xl p-3 mb-5 '>
+            <main className='  rounded-xl  border-border shadow-xl p-3 mb-5 '>
                 <section className=" mb-5 " >
-                    <header className='px-5 border-b-1 border-b-slate-300  flex justify-between '>
-                        <span className="font-semibold text-slate-500 text-lg" >Deliver to this address</span>
+                    <header className='px-5 border-b-1 border-b-border flex justify-between '>
+                        <span className="font-semibold text-foreground/90 text-lg" >Deliver to this address</span>
                     </header>
 
                     {defaultAddress && (
-                        <div className="flex items-center bg-slate-100 text-slate-600  px-2 mt-2 rounded-lg">
+                        <div className="flex items-center bg-secondary/30 text-secondary-foreground/90  px-2 mt-2 rounded-lg">
                             <i className="fa-solid fa-location-dot fa-bounce fa-xl block"></i>
                             <div className="inline-block ms-2 my-3 " >
                                 <p> {addressWithID?.city} </p>
@@ -63,12 +63,12 @@ export default function AddAddress() {
 
                 {addresses && (
                     <>
-                        <h2 className=' text-slate-500 font-semibold text-lg border-b-1 border-b-slate-300 pb-1 ps-3 ' >
+                        <h2 className=' text-foreground/90 font-semibold text-lg border-b-1 border-b-border pb-1 ps-3 ' >
                             Shipping Addresses
                         </h2>
                         <form className='mb-3 px-1' onSubmit={handleSubmit}>
                             {addressesArr.map((address, index) =>
-                                <div key={index} className='flex items-center bg-slate-100 my-3 px-3 py-2 rounded-lg  border-2 border-slate-300 has-checked:border-blue-400' >
+                                <div key={index} className='flex items-center  bg-secondary/30 text-secondary-foreground/90 my-3 px-3 py-2 rounded-xl  border-2 border-border has-checked:border-primary has-checked:accent-accent ' >
                                     <label htmlFor={`${address.id}`} className='ms-3 w-full cursor-pointer flex items-center '>
                                         <input
                                             type="radio"
@@ -88,7 +88,7 @@ export default function AddAddress() {
                                 </div>
                             )}
                             <Button
-                                className='bg-blue-400 text-white font-bold hover:bg-blue-500 cursor-pointer  transition-all duration-300 '
+                                className='bg-primary text-white font-bold hover:bg-primary rounded-full     cursor-pointer  transition-all duration-300 '
                                 type="submit"
                             >
                                 Select Address
