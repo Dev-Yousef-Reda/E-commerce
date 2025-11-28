@@ -103,7 +103,7 @@ export default function Navbar({ showMegaMenu = true }: { showMegaMenu?: boolean
             >
                 <div className={`${isTransparent ? 'bg-transparent ' : 'bg-secondary/85  backdrop-blur-sm'} backdrop-blur-md   text-secondary-foreground  py-4`}
                 >
-                    <div className={` w-[90%] max-w-[90%] mx-auto flex  items-center sm:gap-4    ${showMegaMenu ? '  justify-between flex-wrap ' : ' xl:w-[80%] '}`} >
+                    <div className={` w-[90%] max-w-[90%] mx-auto flex  items-center sm:gap-4   justify-between flex-wrap `} >
 
                         <div className='logo flex items-center gap-1 me-1.5 sm:me-0 sm:gap-4 w-[10%] min-w-max ' >
                             {showMegaMenu &&
@@ -138,8 +138,8 @@ export default function Navbar({ showMegaMenu = true }: { showMegaMenu?: boolean
 
                         </div>
 
-                        <div className={`search  ${showMegaMenu ? ' order-3 sm:order-0 mt-2 sm:mt-0 w-[70%] mx-auto sm:mx-0 sm:w-[50%] sm:max-w-[50%] relative ' : '  w-[80%]  flex justify-center '} `}>
-                            <div className={` ${showMegaMenu ? '' : ' relative w-[70%] md:w-2/3 lg:w-1/2 '} `} >
+                        <div className={`search  order-3 sm:order-0 mt-2 sm:mt-0 w-[70%] mx-auto sm:mx-0 sm:w-[50%] sm:max-w-[50%] relative  `}>
+                            <div className={`  relative  `} >
                                 <Input
                                     type="text"
                                     placeholder="What are you looking for? "
