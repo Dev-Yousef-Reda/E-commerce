@@ -16,8 +16,8 @@ export default async function middleware(req: NextRequest) {
             || (req.nextUrl.pathname).includes('/checkout')
             || (req.nextUrl.pathname).includes('/allorders')
             || (req.nextUrl.pathname).includes('/wishlist')
-            || (req.nextUrl.pathname).includes('/userProfile')
-        ){
+            || (req.nextUrl.pathname).includes('/user-profile')
+        ) {
             return NextResponse.redirect(new URL('/signin', req.url))
         } else {
             return NextResponse.next();
