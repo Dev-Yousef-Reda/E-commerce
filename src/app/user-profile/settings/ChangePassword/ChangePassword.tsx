@@ -71,7 +71,7 @@ export function ChangePassword() {
             <DialogTrigger asChild>
                 <Button
                     variant="outline"
-                    className="cursor-pointer"
+                    className="cursor-pointer bg-primary text-primary-foreground rounded-full font-semibold "
                 >
                     Change Password
                 </Button>
@@ -169,20 +169,25 @@ export function ChangePassword() {
 
                     <div className='mt-5' >
                         <DialogClose asChild>
-                            <Button className='cursor-pointer me-5' variant="outline">Cancel</Button>
+                            <Button
+                                className='cursor-pointer me-5 rounded-full font-semibold bg-secondary text-secondary-foreground '
+                                variant="outline"
+                            >
+                                Cancel
+                            </Button>
                         </DialogClose>
 
                         {isLoading ?
 
                             <Button
-                                className={` bg-blue-400   cursor-not-allowed `}
+                                className={` bg-primary/80   cursor-not-allowed rounded-full font-semibold `}
                             >
                                 Loading...
                             </Button>
                             :
                             <Button
                                 type="submit"
-                                className={` bg-blue-400  hover:bg-blue-500 transition-colors duration-300 cursor-pointer  `}
+                                className={` bg-primary  hover:bg-primary cursor-pointer rounded-full font-semibold `}
                             >
                                 Save changes
                             </Button>
