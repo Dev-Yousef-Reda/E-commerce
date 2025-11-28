@@ -22,7 +22,7 @@ export default async function RootLayout({
     return (
         <>
             <Navbar showMegaMenu={false} />
-            <main className=" mt-[120px] w-[90%]  xl:w-[80%] mx-auto flex gap-8  ">
+            <main className=" mt-[160px] w-[90%]  xl:w-[80%] mx-auto flex gap-8  ">
                 <aside className=' hidden lg:block w-[310px]  '
                 >
 
