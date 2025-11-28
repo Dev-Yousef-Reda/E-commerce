@@ -25,7 +25,7 @@ export default function SearchProducts({ products, searchName }: { products: pro
 
             </div>
             {matchingProducts.length === 0 &&
-                <p className=' font-semibold text-center text-slate-600 w-full ' >
+                <p className=' font-semibold text-center text-foreground border-border shadow-xl p-5  rounded-xl ' >
                     No products has name: {searchName}
                 </p>
             }

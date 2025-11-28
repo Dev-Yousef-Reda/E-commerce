@@ -9,7 +9,7 @@ export default function JoinUs() {
             <p className='text-2xl my-5 '>Explore several products from trusted suppliers by signing up today!</p>
             <Link
                 className='bg-primary text-primary-foreground px-10 py-2 rounded-full text-2xl tracking-wider'
-                href={``} >
+                href={`/signup`} >
                 Sign Up
             </Link>
         </section>

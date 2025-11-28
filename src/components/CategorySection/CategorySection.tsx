@@ -32,7 +32,7 @@ export default async function CategorySection({ category, insideCategories = tru
                             className=' border-2 border-border rounded-lg lg:text-lg  px-2 py-1 lg:px-3 lg:py-1.5
                     hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300 '
                         >
-                            <Link href={`/categories/${category._id}`} >View more</Link>
+                            <Link href={`/categories/${category.slug}?categoryId=${category._id}`} >View more</Link>
                         </span>
                     )}
                 </h2>
