@@ -22,7 +22,7 @@ export default function SubCategories({ categoryId, products, insideNavSheet = f
     return (
         <>
             {!insideNavSheet &&
-                <div className='absolute  left-0  md:top-[121%] xl:top-[150%]  w-full bg-secondary/40 backdrop-blur-lg rounded-lg text-foreground ' >
+                <div className='absolute  left-0  md:top-[121%] xl:top-[150%]  w-full bg-secondary/70 backdrop-blur-lg rounded-lg text-foreground ' >
                     <NavigationMenuContent  >
                         <section
                             className={`  grid grid-cols-4 gap-1.5 px-2 py-4  `}
