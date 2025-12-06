@@ -49,7 +49,7 @@ export default async function page() {
   return (
     <section className='mt-[100px] lg:mt-[210px] w-[90%] mx-auto mb-10 ' >
 
-      <h1 className={` text-slate-600 font-bold text-2xl mb-5 `} >
+      <h1 className={` text-foreground font-bold text-2xl mb-5 `} >
         Orders
       </h1>
 
