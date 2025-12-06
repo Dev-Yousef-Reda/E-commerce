@@ -137,7 +137,7 @@ export default async function RootLayout({
                     >
 
                         <Link
-                            href={'/userProfile/settings'}
+                            href={'/user-profile/settings'}
                             className="text-foreground text-lg font-semibold p-3 
                             hover:bg-accent hover:text-accent-foreground transition-colors duration-300 w-full block rounded-xl "
                         >
